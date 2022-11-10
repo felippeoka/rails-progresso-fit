@@ -5,6 +5,18 @@ data: {turbo: false}) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :first_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "João" }%>
+    <%= f.input :last_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Silva" }%>
+    <%= f.input :phone,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "(11) 9.9228-3960" }%>
     <%= f.input :email,
                 required: true,
                 autofocus: true,

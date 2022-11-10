@@ -30,7 +30,6 @@ gem "devise"
 gem "cloudinary"
 gem "bootstrap", '~> 5.2.2'
 
-
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
