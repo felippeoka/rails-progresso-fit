@@ -1,0 +1,29 @@
+<div class="container text-center mt-5 mb-5">
+
+    <div class="mx-auto" style="width: 500px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Keep your infor updated!</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <div class="d-flex justify-content-center">
+            <p class="card-text">
+              <%= simple_form_for [@user, @weight] do |f| %>
+                <div class="row justify-content-center">
+                  <div class="col-sm-4"><%= f.input :weight %></div>
+                </div>
+                <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+                <div class="photo-card card-category mb-4 mt-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/700x600/?bodybuilder)"></div>
+                <%# <% @weight.photos.each do |photo| %>
+                  <%# <%= cl_image_tag photo.key, height: 400, width: 500, crop: :fill %>
+                <%# <% end %>
+                <%= f.submit "Deixe de ser frango!", class: "btn btn-secondary mt-3" %>
+              <% end %>
+            </p>
+          </div>
+          <%# <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a> %>
+        </div>
+      </div>
+    </div>
+
+</div>
