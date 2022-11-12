@@ -18,26 +18,26 @@ data: {turbo: false}) do |f| %>
     <%= f.input :first_name,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "João" }%>
+                input_html: { autocomplete: "João", class:"text-dark" }%>
     <%= f.input :last_name,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "Silva" }%>
+                input_html: { autocomplete: "Silva", class:"text-dark" }%>
     <%= f.input :phone,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "(11) 9.9228-3960" }%>
+                input_html: { autocomplete: "(11) 9.9228-3960", class:"text-dark" }%>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email" }%>
+                input_html: { autocomplete: "email", class:"text-dark" }%>
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "new-password", class:"text-dark" } %>
     <%= f.input :password_confirmation,
                 required: true,
-                input_html: { autocomplete: "new-password" } %>
+                input_html: { autocomplete: "new-password", class:"text-dark" } %>
   </div>
 
   <div class="form-actions d-grid gap-2">
