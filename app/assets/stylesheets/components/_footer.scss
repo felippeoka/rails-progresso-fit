@@ -1,0 +1,27 @@
+.footer {
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 80px;
+  margin-top: 20px;
+  line-height: 70px;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.3);
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  margin-top: 15px;
+}
+.footer-image{
+  width: 12%;
+  margin-top: 5px;
+}
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 100px;
+}

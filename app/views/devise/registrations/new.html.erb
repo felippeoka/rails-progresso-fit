@@ -1,5 +1,13 @@
-<h2>Sign up</h2>
-
+<div class="split left">
+  <div class="centered">
+    <%= image_tag "login-photo.jpg" %>
+  </div>
+</div>
+<div class="split right">
+<div class="elementor-section-wrap">
+  <br>
+<h2>SIGN <span style="color:red">UP</span></h2>
+</div>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
 data: {turbo: false}) do |f| %>
   <%= f.error_notification %>
@@ -36,3 +44,4 @@ data: {turbo: false}) do |f| %>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>

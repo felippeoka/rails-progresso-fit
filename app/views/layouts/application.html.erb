@@ -11,8 +11,13 @@
   </head>
 
   <body>
+    <% unless action_name == "new" %>
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
+    <% end %>
     <%= yield %>
   </body>
+  <% unless action_name == "new" %>
+  <%= render "shared/footer" %>
+  <% end %>
 </html>
