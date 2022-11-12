@@ -78,3 +78,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "chartkick", "~> 4.2"
+
+gem "groupdate", "~> 6.1"

@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+(1..100).each do |i|
+  Weight.create(
+    user_id: 3,
+    weight: rand(60..100),
+    created_at: Time.now - i.days,
+    updated_at: Time.now - i.days
+  )
+end
