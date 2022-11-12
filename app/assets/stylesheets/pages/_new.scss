@@ -1,0 +1,31 @@
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+}
+
+.left {
+  left: 0;
+  background-color: #111;
+  overflow: hidden;
+}
+
+.right {
+  right: 0;
+  background-color: rgb(0, 0, 0);
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.image-test{
+  object-fit: cover;
+  height: 100%;
+}
