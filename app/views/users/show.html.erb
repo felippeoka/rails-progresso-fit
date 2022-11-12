@@ -1,2 +1,38 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container">
+
+ <div class="row d-flex justify-content-center">
+    <div class="col-sm-10">
+
+      <div class="card-show mt-3 d-flex justify-content-between">
+        <div>
+          <h3>Infos</h3>
+        </div>
+        <div>
+          <h3> <%= link_to "Publicar", "#", class: "btn btn-secondary" %> </h3>
+        </div>
+      </div>
+
+      <div class="card-show mt-3 d-flex justify-content-center">
+        <div class="text-center">
+          <h3>Gráfico de Evolução</h3>
+          <%# <h3> <%= line_chart  %> </h3> %>
+        </div>
+      </div>
+
+      <div class="card-show mt-3 d-flex justify-content-center">
+        <div class="text-center">
+          <h3>Gráfico de Projeção</h3>
+          <h3> <%= link_to "Publicar", "#", class: "btn btn-secondary" %> </h3>
+        </div>
+      </div>
+
+      <div class="card-show mt-3 d-flex justify-content-center">
+        <div class="text-center">
+          <h3>Fotos</h3>
+          <h3> <%= link_to "Publicar", "#", class: "btn btn-secondary" %> </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
