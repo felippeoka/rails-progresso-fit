@@ -18,12 +18,19 @@ font-family: "Montserrat";
   font-weight: 900;
   font-size: 3rem;
   line-height: 1.5;
-  padding-top: 5%;
+  padding-top: 20%;
+}
+
+.h2-home {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3rem;
+  line-height: 1.5;
 }
 
 .h3-home {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
+  font-size: 1.5rem;
 }
 
 .p-home {
@@ -81,4 +88,25 @@ font-family: "Montserrat";
 
 .icon:hover {
   color: $gray;
+}
+
+// Testimonials
+#testimonials {
+  font-family: "Montserrat";
+  text-align: center;
+  padding: 7% 15%;
+  background-color: $black;
+  color: white;
+}
+
+.str-monster {
+  font-weight: 900;
+  color: $red;
+}
+
+.testimonial-image {
+  width: 20%;
+  border-radius: 50%;
+  margin: 20px;
+
 }
