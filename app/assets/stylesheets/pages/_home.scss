@@ -1,1 +1,112 @@
 // Specific CSS for your home-page
+body {
+font-family: "Montserrat";
+}
+
+#title {
+  background-color: #000000
+}
+
+.navbar-color {
+  background-color: #000000;
+}
+
+.container-fluid {
+  padding: 3% 10%;
+}
+
+h1 {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
+  line-height: 1.5;
+  padding-top: 5%;
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+p {
+  color: $gray;
+}
+
+h5 {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  padding-top: 3%;
+}
+
+.btn-color {
+  color: white;
+  background-color: $red;
+}
+
+.main-button {
+  align-items: center;
+}
+
+.main-button:hover {
+  color: white;
+  background-color: rgb(208,45,25);
+
+}
+
+// Navigation Bar
+
+.navbar {
+  padding: 0 0 3.5rem;
+}
+
+.navbar-brand {
+  font-family: "Ubuntu";
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.nav-item {
+  padding: 0 18px;
+}
+
+.nav-link {
+  font-size: 1.1rem;
+  font-family: "Montserrat";
+  font-weight: 300;
+}
+
+.registration-button {
+  margin: 5% 3% 5% 0;
+}
+
+// Title Image
+
+.title-image {
+  position: relative;
+  height: auto;
+}
+
+// Features Section
+
+#features {
+  padding: 7% 15%;
+}
+
+.feature-box {
+  color: $black;
+  text-align: center;
+  padding: 4.5%;
+}
+
+.icon {
+  color: $black;
+  margin-bottom: 1rem;
+}
+
+.icon:hover {
+  color: $gray;
+}
