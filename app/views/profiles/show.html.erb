@@ -5,17 +5,17 @@
 
       <div class="card-show mt-3 d-flex justify-content-between">
         <div>
-          <h3>Infos</h3>
+          <h3>Infos <%= @user.email %></h3>
         </div>
         <div>
-          <h3> <%= link_to "Publicar", "#", class: "btn btn-secondary" %> </h3>
+          <h3> <%= link_to "Publicar", new_weight_path, class: "btn btn-secondary" %> </h3>
         </div>
       </div>
 
       <div class="card-show mt-3 d-flex justify-content-center">
         <div class="text-center">
           <h3>Gráfico de Evolução</h3>
-          <%# <h3> <%= line_chart  %> </h3> %>
+          <%# <h3> <%= line_chart Weight.group_by_day(:created_at).count </h3> %>>
         </div>
       </div>
 

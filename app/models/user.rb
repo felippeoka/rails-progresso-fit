@@ -5,5 +5,4 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :weights, dependent: :destroy
-  has_many_attached :photos
 end
