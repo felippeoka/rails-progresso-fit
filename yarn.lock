@@ -420,6 +420,11 @@ fastest-levenshtein@^1.0.12:
   resolved "https://registry.yarnpkg.com/fastest-levenshtein/-/fastest-levenshtein-1.0.16.tgz#210e61b6ff181de91ea9b3d1b84fdedd47e034e5"
   integrity sha512-eRnCtTTtGZFpQCwhJiUOuxPQWRXVKYDn0b2PeHfXL6/Zi53SLAzAHfVhVWK2AryC/WH05kGfxhFIPvTF0SXQzg==
 
+file-upload-with-preview@^5.0.8:
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/file-upload-with-preview/-/file-upload-with-preview-5.0.8.tgz#318e2527aef3c4491103fb53358ec1df30588e76"
+  integrity sha512-tPvPMsB21rmKQEsC08yo19MKQunRUbkChU4NRiumt/QjIOMproDZ8dmhC2y+aTZw4VIRa8MBbH3YVuEgFwGe4A==
+
 find-up@^4.0.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/find-up/-/find-up-4.1.0.tgz#97afe7d6cdc0bc5928584b7c8d7b16e8a9aa5d19"
