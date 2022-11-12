@@ -12,7 +12,7 @@ font-family: "Montserrat";
   padding: 3% 10%;
 }
 
-h1 {
+.h1-home {
   color: white;
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
@@ -21,16 +21,16 @@ h1 {
   padding-top: 5%;
 }
 
-h3 {
+.h3-home {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
 }
 
-p {
+.p-home {
   color: $gray;
 }
 
-h5 {
+.h5-home {
   color: white;
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
@@ -65,6 +65,7 @@ h5 {
 
 #features {
   padding: 7% 15%;
+  background-color: white;
 }
 
 .feature-box {
