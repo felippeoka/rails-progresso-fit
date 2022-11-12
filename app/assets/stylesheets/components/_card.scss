@@ -12,12 +12,15 @@
 }
 
 .photo-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr;
+  // grid-gap: 16px;
+  width: 150px;
+  filter: brightness(150%);
   background-size: cover;
   background-position: center;
   height: 180px;
+  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,7 +32,20 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-// .card-body {
-//   background-color: black;
-//   color: white;
-// }
+.card-body {
+  background-color: $gray;
+  color: white;
+  box-shadow: 0px 1px 2px 0px rgba(0,255,255,0.7),
+            1px 2px 2px 0px rgba(0,255,255,0.7),
+            2px 4px 4px 0px rgba(0,255,255,0.7),
+            2px 4px 12px 0px rgba(0,255,255,0.7);
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card-subtitle {
+  color: white;
+  opacity: 0.8;
+}
