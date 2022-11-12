@@ -19,13 +19,13 @@
   </head>
 
   <body>
-    <% unless action_name == "new" %>
+    <% unless action_name == "registration/new" && "sessions/new" %>
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
     <% end %>
     <%= yield %>
   </body>
-  <% unless action_name == "new" %>
+  <% unless action_name == "registration/new" && "sessions/new" %>
   <%= render "shared/footer" %>
   <% end %>
 </html>
