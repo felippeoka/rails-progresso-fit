@@ -7,7 +7,7 @@ class WeightsController < ApplicationController
     @weight = Weight.new(weight_params)
     @weight.user = current_user
     if @weight.save
-      redirect_to users_show_path
+      redirect_to profiles_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -16,6 +16,6 @@ class WeightsController < ApplicationController
   private
 
   def weight_params
-    params.require(:weight).permit(:weight, :user_id)
+    params.require(:weight).permit(:weight, :user_id, :photos)
   end
 end
