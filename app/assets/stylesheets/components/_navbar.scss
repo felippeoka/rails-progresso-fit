@@ -11,10 +11,6 @@
   width: 140px;
 }
 
-.nav-link .hover{
-  color: red;
-}
-
 // Navigation Bar
 
 .navbar {
@@ -36,6 +32,7 @@
   font-family: "Montserrat";
   font-weight: 300;
   color: white;
+  // padding: 0 0px;
 }
 
 .registration-button {
@@ -44,4 +41,12 @@
 
 .navbar-color {
   background-color: #000000;
+}
+.name{
+  font-size: 1.1rem;
+  font-family: "Montserrat";
+  font-weight: 300;
+  color: white;
+  padding: 5px;
+  // vertical-align: auto;
 }
