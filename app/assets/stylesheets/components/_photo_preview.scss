@@ -1,0 +1,27 @@
+// .img-prd {
+//   background-size: cover;
+//   background-position: center;
+//   height: 180px;
+//   margin: auto;
+//   width: 300px;
+// }
+.custom-file-container {
+  display: flex;
+  justify-content: center;
+  max-width: 500px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.custom-file-container::-webkit-scrollbar {
+  display: none;
+}
+
+.img_prd {
+  width: 150px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-left: 10px;
+  // box-shadow: 0 0 15px rgba(0 0 0 / 20%);
+}

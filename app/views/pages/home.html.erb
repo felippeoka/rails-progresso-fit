@@ -6,7 +6,11 @@
     <div class="col-lg-6">
       <h1 class="h1-home">IT'S ALL ABOUT WHAT YOU CAN ACHIEVE</h1>
       <h5 class="h5-home">GET FIT, STRONG & MOTIVATED</h5>
-      <button type="button" class="btn btn-lg btn-color main-button registration-button"><i class="fa-solid fa-dumbbell"></i> START NOW</button>
+      <div>
+        <%= link_to profiles_path, class: "btn btn-lg btn-color main-button registration-button" do %>
+          <i class="fa-solid fa-dumbbell"></i> START NOW
+        <% end %>
+      </div>
     </div>
 
     <%# <div class="col-lg-6">

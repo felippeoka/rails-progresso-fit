@@ -18,18 +18,18 @@
       </div>
 
 <%# current_user.weights.pluck(:weight) %>
-      
+
       <div class="card-show mt-3 d-flex justify-content-center">
         <div class="text-center w-100 p-3">
           <h3>Progress</h3>
-          <h3> <%= line_chart current_user.weights.pluck(:created_at, :value), 
+          <h3> <%= line_chart current_user.weights.pluck(:created_at, :value),
           min: @user.sort_weight.first - 10,
           max: @user.sort_weight.last + 10,
           label: "Weight",
           suffix: " kg",
           colors: ["#E74C3C"],
           empty: "Let's work out!"
-          %> </h3> 
+          %> </h3>
         </div>
       </div>
 
@@ -45,6 +45,9 @@
         <div class="text-center">
           <h3>Photos</h3>
           <h3> <%= link_to "Publicar", "#", class: "btn btn-secondary" %> </h3>
+            <%# <% @user.weights.photos.each do |photo| %> %>
+              <%# <%= cl_image_tag photo.key, height: 400, width: 500, crop: :fill %> %>
+            <%# <% end %> %>
         </div>
       </div>
     </div>
