@@ -9,10 +9,10 @@
             <p class="card-text">
               <%= simple_form_for [@user, @weight] do |f| %>
                 <div class="row justify-content-center">
-                  <div class="d-flex col-sm-6"><p class="m-2">Weight:</p><%= f.input :weight, input_html: { class: "input-weight" }, label: false %></div>
+                  <div class="d-flex col-sm-6"><p class="m-2">Weight(kg):</p><%= f.input :weight, input_html: { class: "input-weight" }, label: false %></div>
                 </div>
                 <%= f.input :photos, as: :file, input_html: { multiple: true, class: "input-photo" } %>
-                <%# <div class="custom-file-container" data-upload-id="myFirstImage"></div> %>
+                <div class="custom-file-container" data-upload-id="myFirstImage"></div>
                 <div class="photo-card mb-3 mt-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/700x600/?bodybuilder)"></div>
                 <%# <% @weight.photos.each do |photo| %>
                   <%# <%= cl_image_tag photo.key, height: 400, width: 500, crop: :fill %>
