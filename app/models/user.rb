@@ -32,9 +32,9 @@ class User < ApplicationRecord
     calc = first_weight - last_weight
     
     if calc.positive?
-      "You have reduced #{calc} kg since #{Weight.first.created_at.strftime("%d/%b/%Y")}"
+      "You have reduced #{calc} kg since #{Value.first.created_at.strftime("%d/%b/%Y")}"
     else
-      "You have gained BEGIN #{calc.abs} kg since #{Weight.first.created_at.strftime("%d/%b/%Y")}"
+      "You have gained BEGIN #{calc.abs} kg since #{Value.first.created_at.strftime("%d/%b/%Y")}"
     end
   end
 
@@ -77,12 +77,12 @@ class User < ApplicationRecord
   private
   
   def weight_min_with_date
-    weights_dates = weights.pluck(:weight, :created_at).sort
+    weights_dates = weights.pluck(:value, :created_at).sort
     weights_dates[0]
   end
 
   def weights_all
-    weights.pluck(:weight)
+    weights.pluck(:value)
   end
 
 end
