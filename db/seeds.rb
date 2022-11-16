@@ -8,7 +8,7 @@
 
 (1..30).each do |i|
   Weight.create!(
-    user_id: 1,
+    user_id: 3,
     weight: rand(60..100),
     created_at: DateTime.now + i,
     updated_at: DateTime.now + i
