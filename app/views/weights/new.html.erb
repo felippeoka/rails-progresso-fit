@@ -27,12 +27,13 @@
                       <span class="visually-hidden">Next</span>
                     </button> %>
                   <%# </div> %>
-                  <div class="custom-file-container" data-upload-id="myFirstImage"></div>
-                  <div class="photo-card mb-3 mt-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/700x600/?bodybuilder)"></div>
+                  <div class="custom-file-container" data-upload-id="myFirstImage">
+                    <div class="photo-card mb-1 mt-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/700x600/?bodybuilder)"></div>
+                  </div>
                 <%# <% @weight.photos.each do |photo| %>
                   <%# <%= cl_image_tag photo.key, height: 400, width: 500, crop: :fill %>
                 <%# <% end %>
-                <%= f.submit "Deixe de ser frango!", class: "btn btn-frango-weight mt-2 mb-4" %>
+                <%= f.submit "Deixe de ser frango!", class: "btn btn-frango-weight mt-3 mb-4" %>
                 <div class="position-relative">
                   <div class="position-absolute bottom-0 start-0 p-4 px-1">
                     <%= link_to profiles_path, class: "text-decoration-none text-light" do %>

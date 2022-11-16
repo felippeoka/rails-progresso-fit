@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   validates :email, :first_name, :last_name, :phone, presence: true
   validates :email, :phone, uniqueness: true
-  
+
   has_many :weights, dependent: :destroy
 
   @imc = 0
@@ -14,23 +14,23 @@ class User < ApplicationRecord
   def sort_weight
     weights_all.sort
   end
-  
+
   def progress_from_min
     last_weight = weights_all.last
     calc = weight_min_with_date[0] - last_weight
-    
+
     if calc.positive?
       "You have reduced #{calc} kg since #{created_at.strftime("%d/%b/%Y")}"
     else
       "You have gained MIN #{calc.abs} kg since #{weight_min_with_date[1].strftime("%d/%b/%Y")}"
     end
   end
-  
+
   def progress_from_begin
     last_weight = weights_all.last
     first_weight = weights_all.first
     calc = first_weight - last_weight
-    
+
     if calc.positive?
       "You have reduced #{calc} kg since #{Weight.first.created_at.strftime("%d/%b/%Y")}"
     else
@@ -45,7 +45,7 @@ class User < ApplicationRecord
   end
 
   def imc_message
-    if @imc<16 
+    if @imc<16
       "Severe thinness"
     elsif @imc<=17
       "Moderate thinness"
@@ -60,7 +60,7 @@ class User < ApplicationRecord
                 elsif @imc<=39.99
                   "Obesity class II"
                   else
-                    "Obesity class III"      
+                    "Obesity class III"
     end
   end
 
@@ -73,9 +73,9 @@ class User < ApplicationRecord
       ideal_weight.round(2)
     end
   end
- 
+
   private
-  
+
   def weight_min_with_date
     weights_dates = weights.pluck(:value, :created_at).sort
     weights_dates[0]
