@@ -16,6 +16,6 @@ class WeightsController < ApplicationController
   private
 
   def weight_params
-    params.require(:weight).permit(:weight, :user_id, :photos)
+    params.require(:weight).permit(:weight, :user_id, photos: [])
   end
 end

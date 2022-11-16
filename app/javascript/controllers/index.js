@@ -6,3 +6,6 @@ import { application } from "./application"
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import WeightImageController from "./weight_image_controller"
+application.register("weight-image", WeightImageController)
