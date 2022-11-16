@@ -6,7 +6,7 @@
       <div class="card-show mt-3 d-flex justify-content-between">
         <div class="text-center">
           <h1>Overall</h1>
-          <h3>Your weight: <%= @user.weights.last.weight %></h3>
+          <h3>Your weight: <%= @user.weights.last.value %></h3>
           <h3>BMI: <%= @user.imc_calc %> - <%=  @user.imc_message %></h3>
           <h3><%=  @user.progress_from_min %></h3>
           <h3><%=  @user.progress_from_begin %></h3>
@@ -22,7 +22,7 @@
       <div class="card-show mt-3 d-flex justify-content-center">
         <div class="text-center w-100 p-3">
           <h3>Progress</h3>
-          <h3> <%= line_chart current_user.weights.pluck(:created_at, :weight), 
+          <h3> <%= line_chart current_user.weights.pluck(:created_at, :value), 
           min: @user.sort_weight.first - 10,
           max: @user.sort_weight.last + 10,
           label: "Weight",
@@ -49,5 +49,4 @@
       </div>
     </div>
   </div>
-  
 </div>
