@@ -12,12 +12,34 @@
                   <div class="d-flex col-sm-6"><p class="m-2">Weight(kg):</p><%= f.input :value, input_html: { class: "input-weight" }, label: false %></div>
                 </div>
                   <%= f.input :photos, as: :file, input_html: { multiple: true, class: "input-photo" } %>
+                  <%# <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel"> %>
+                    <%# <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="..." class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button> %>
+                  <%# </div> %>
                   <div class="custom-file-container" data-upload-id="myFirstImage"></div>
                   <div class="photo-card mb-3 mt-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/700x600/?bodybuilder)"></div>
                 <%# <% @weight.photos.each do |photo| %>
                   <%# <%= cl_image_tag photo.key, height: 400, width: 500, crop: :fill %>
                 <%# <% end %>
                 <%= f.submit "Deixe de ser frango!", class: "btn btn-frango-weight mt-2 mb-4" %>
+                <div class="position-relative">
+                  <div class="position-absolute bottom-0 start-0 p-4 px-1">
+                    <%= link_to profiles_path, class: "text-decoration-none text-light" do %>
+                      <i class="fa-solid fa-left-long"></i>
+                    <% end %>
+                  </div>
+                </div>
               <% end %>
             </p>
           </div>
