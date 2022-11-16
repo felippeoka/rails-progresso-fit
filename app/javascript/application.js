@@ -2,5 +2,5 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
-import "chartkick";
-import "Chart.bundle";
+import "chartkick"
+import "Chart.bundle"
