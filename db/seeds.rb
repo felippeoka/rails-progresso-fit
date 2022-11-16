@@ -10,8 +10,8 @@
   Weight.create!(
     user_id: 1,
     weight: rand(60..100),
-    created_at: Date.today + i,
-    updated_at: Date.today + i
+    created_at: DateTime.now + i,
+    updated_at: DateTime.now + i
   )
 end
 
