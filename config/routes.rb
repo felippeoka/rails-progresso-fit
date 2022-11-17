@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resource :profiles, only: %i[show]
-  resources :weights, only: %i[new create]
+  resources :weights, only: %i[new create show]
 end
