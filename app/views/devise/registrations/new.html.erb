@@ -8,13 +8,13 @@
     <div class="centered">
       <div class="d-flex justify-content-center">
       <br>
-<h2 class="h1-log"><span style="color:white">SIGN </span><span style="color:red">UP</span></h2>
+<h2 class="h1-log mt-4 mb-4"><span style="color:white">SIGN </span><span style="color:red">UP</span></h2>
 </div>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
 data: {turbo: false}) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-inputs text-white">
     <%= f.input :first_name,
                 required: true,
                 autofocus: true,
@@ -41,12 +41,12 @@ data: {turbo: false}) do |f| %>
   </div>
 
   <div class="form-actions d-grid gap-2">
-    <%= f.button :submit, "Sign up", class: "btn btn-outline-secondary" %>
+    <%= f.button :submit, "Sign up", class: "btn btn-outline-secondary text-white" %>
   </div>
 <% end %>
 <div class="d-flex justify-content-center mt-3">
-    <span>Already have an account?</span>
-    <%= link_to "Sign in", new_session_path(resource_name), class:"link-secondary ms-1" %>
+    <span class="text-white">Already have an account?</span>
+    <%= link_to "Sign in", new_session_path(resource_name), class:"link-secondary ms-1 text-white" %>
     </div>
 
 </div>
