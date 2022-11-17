@@ -28,7 +28,7 @@ font-family: "Montserrat";
 
 .h2-home {
   font-family: "Montserrat", sans-serif;
-  font-size: 3rem;
+  font-size: 2rem;
   line-height: 1.5;
 }
 
@@ -110,8 +110,12 @@ font-family: "Montserrat";
 }
 
 .testimonial-image {
-  width: 20%;
+  width: 15%;
   border-radius: 50%;
   margin: 20px;
 
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px #000000;
 }
