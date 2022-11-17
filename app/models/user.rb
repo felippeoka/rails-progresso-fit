@@ -8,6 +8,7 @@ class User < ApplicationRecord
   validates :email, :phone, uniqueness: true
 
   has_many :weights, dependent: :destroy
+  has_one_attached :photo
 
   @imc = 0
 
