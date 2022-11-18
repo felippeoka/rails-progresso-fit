@@ -1,0 +1,13 @@
+<div class="container">
+
+  <% current_user.weights.each do |weight| %>
+    <% weight.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 400, width: 500, crop: :fill %>
+      <%= link_to weight_path(@weight), data: {turbo_method: :delete, turbo_confirm: "Are you sure that you want to delete this item?"}, class: "text-decoration-none text-secondary" do %>
+        <i class="fa-solid fa-trash opacity-75 link-secondary"></i>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <%= @weight.value %> <p>kg</p>
+</div>
