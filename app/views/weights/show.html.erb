@@ -1,13 +1,45 @@
-<div class="container">
+<div class="container d-flex justify-content-center">
 
-  <% current_user.weights.each do |weight| %>
-    <% weight.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 400, width: 500, crop: :fill %>
-      <%= link_to weight_path(@weight), data: {turbo_method: :delete, turbo_confirm: "Are you sure that you want to delete this item?"}, class: "text-decoration-none text-secondary" do %>
+  <div class="card-trip mt-3">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+      <%# <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      </div> %>
+      <div class="carousel-inner">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+          <% if @weight.photos.attached? %>
+            <% @weight.photos.each_with_index do |photo, index| %>
+              <div class="carousel-item <%= 'active' if index.zero? %>">
+                <%= cl_image_tag photo.key, height: 400, width: 500, crop: :fill %>
+              </div>
+            <% end %>
+          <% else %>
+            <div class="photo-unleash" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8Ym9keWJ1aWxkZXJ8fHx8fHwxNjY4ODY1NTEy&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=700)"></div>
+          <% end %>
+      </div>
+    </div>
+
+    <div class="card-trip-infos">
+      <div>
+        <h2><strong><%= @weight.value %>kg</strong></h2>
+        <p><strong>Uploaded at <%= @weight.created_at.strftime("%d/%b/%Y") %></strong></p>
+      </div>
+      <h2 class="card-trip-pricing"><%= link_to weight_path(@weight), data: {turbo_method: :delete, turbo_confirm: "Are you sure that you want to delete the item#{@weight.id}?"}, class: "text-decoration-none text-secondary" do %>
         <i class="fa-solid fa-trash opacity-75 link-secondary"></i>
-      <% end %>
-    <% end %>
-  <% end %>
+      <% end %></h2>
+      <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
+    </div>
 
-  <%= @weight.value %> <p>kg</p>
+    <%= link_to new_weight_path, class: "text-decoration-none text-light px-4" do %>
+      <i class="fa-solid fa-left-long mb-3"></i>
+    <% end %>
+  </div>
 </div>
