@@ -1,28 +1,29 @@
-<div class="navbar navbar-expand-lg navbar-light navbar-dark bg-black navbar-lewagon">
-  <%# <div class="container"> %>
+<div class="navbar navbar-expand-md navbar-dark bg-black navbar-lewagon mt-3 mb-3">
+  <div class="container-nav">
     <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "Progresso Fit png branco header.png" %>
+      <%= image_tag "Progresso Fit png9.png" %>
     <% end %>
-
+  </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse container-nav navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <% if user_signed_in? %>
-           <li class="name"><%= "#{current_user.first_name}  #{current_user.last_name}" %>
+           <li class="name foo"><%= "#{current_user.first_name}  #{current_user.last_name}" %>
           </li>
           <li class="nav-item dropdown">
             <% if current_user.photo.attached? %>
-              <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%# <%= cl_image_tag("IMAGE_WITH_FACE_ID", width: 150, height: 150, crop: :thumb, gravity: :face) %>
+              <%= cl_image_tag(current_user.photo.key, width: 45, height: 45, crop: :thumb, gravity: :face, class: "rounded-circle dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
             <% else %>
               <%= image_tag "icon.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>
-            
+
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Profile", "#", class: "dropdown-item" %>
+              <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
