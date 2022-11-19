@@ -4,18 +4,33 @@
     <div class="col-sm-10">
 
       <div class="card-show mt-3 d-flex justify-content-between">
-        <div class="text-center">
+        <div class="text-center fixed-sidebar-container row">
           <h1>Overall</h1>
-          <h3>Your weight: <%= current_user.weights.last.value %></h3>
+          <%# <div class="card"> %>
+          <ul class="list-group list-group-horizontal">
+          <div class="stat-subtext">Age
+            <li class="list-group"><%= ((Time.zone.now - current_user.birthday.to_time) / 1.year.seconds).floor %>y/o</li>
+          </div>
+          <div class="linha-vertical">
+          </div>
+          <div class="stat-subtext">Weight
+            <li class="list-group"><%= current_user.weights.last.value %>kg</li>
+          </div>
+          <div class="linha-vertical">
+          </div>
+          <div class="stat-subtext">Height
+            <li class="list-group"><%= (current_user.height)/100 %>m</li>
+          </div>
+          </ul>
+          <%= link_to "Post a new weight", new_weight_path, class: "link-secondary mt-4" %>
+          </div>
+           <%# <div class="row d-flex justify-content-center"> %>
+          <%# </div> %>
           <h3>BMI: <%= current_user.imc_calc %> - <%=  current_user.imc_message %></h3>
           <h3><%=  current_user.progress_from_min %></h3>
           <h3><%=  current_user.progress_from_begin %></h3>
           <h3>Ideal weight: <%= current_user.ideal_weight %></h3>
         </div>
-        <div>
-          <h3> <%= link_to "Publicar", new_weight_path, class: "btn btn-secondary" %> </h3>
-        </div>
-      </div>
 
 <%# current_user.weights.pluck(:weight) %>
 
