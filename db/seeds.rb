@@ -12,7 +12,7 @@ Weight.destroy_all
 user = User.create!(
   birthday: "14/09/1990",
   age: 32,
-  sex: "male",
+  gender: "male",
   height: rand(170..190),
   email: "a@a.com",
   password: "123456",
