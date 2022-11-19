@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  GENDERS = ['Male', 'Female', 'Other']
 
   validates :email, :first_name, :last_name, :phone, presence: true
   validates :email, :phone, uniqueness: true

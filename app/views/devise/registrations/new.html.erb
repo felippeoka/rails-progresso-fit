@@ -7,46 +7,45 @@
   <div class="split right">
     <div class="centered">
       <div class="d-flex justify-content-center">
-      <br>
-<h2 class="h1-log mt-4 mb-4"><span style="color:white">SIGN </span><span style="color:red">UP</span></h2>
-</div>
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
-data: {turbo: false}) do |f| %>
-  <%= f.error_notification %>
+        <h2 class="h1-log mt-4 mb-4"><span style="color:white">SIGN </span><span style="color:red">UP</span></h2>
+      </div>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
+      data: {turbo: false}) do |f| %>
+        <%= f.error_notification %>
 
-  <div class="form-inputs text-white">
-    <%= f.input :first_name,
+      <div class="form-inputs text-white">
+        <%= f.input :first_name,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "João", class:"text-dark" }%>
-    <%= f.input :last_name,
+        <%= f.input :last_name,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "Silva", class:"text-dark" }%>
-    <%= f.input :phone,
+        <%= f.input :phone,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "(11) 9.9228-3960", class:"text-dark" }%>
-    <%= f.input :email,
+        <%= f.input :email,
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email", class:"text-dark" }%>
-    <%= f.input :password,
+        <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                 input_html: { autocomplete: "new-password", class:"text-dark" } %>
-    <%= f.input :password_confirmation,
+        <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password", class:"text-dark" } %>
-  </div>
-
-  <div class="form-actions d-grid gap-2">
-    <%= f.button :submit, "Sign up", class: "btn btn-outline-secondary text-white" %>
-  </div>
-<% end %>
-<div class="d-flex justify-content-center mt-3">
-    <span class="text-white">Already have an account?</span>
-    <%= link_to "Sign in", new_session_path(resource_name), class:"link-secondary ms-1 text-white" %>
+        </div>
+        <div class="form-actions d-grid gap-2">
+          <%= f.button :submit, "Sign up", class: "btn btn-outline-secondary text-white" %>
+        </div>
+        <% end %>
+        <div class="d-flex justify-content-center mt-3">
+        <span class="text-white">Already have an account?</span>
+        <%= link_to "Sign in", new_session_path(resource_name), class:"link-secondary ms-1 text-white" %>
+      </div>
     </div>
-
+  </div>
 </div>
