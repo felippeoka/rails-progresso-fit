@@ -49,3 +49,19 @@
   color: white;
   opacity: 0.8;
 }
+
+.card-text-posted {
+  align-items: center;
+  background-color: $gray;
+  color: white;
+  height: 100%;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card-full-posted-right {
+  border-radius: 0 5px 5px 0;
+}
+.card-full-posted-left {
+  border-radius: 5px 0 0 5px;
+}
