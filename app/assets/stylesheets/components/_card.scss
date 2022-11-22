@@ -49,3 +49,77 @@
   color: white;
   opacity: 0.8;
 }
+
+.card-trip {
+  overflow: hidden;
+  background: black;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 500px;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0px 1px 2px 0px rgba(0,255,255,0.7),
+            1px 2px 2px 0px rgba(0,255,255,0.7),
+            2px 4px 4px 0px rgba(0,255,255,0.7),
+            2px 4px 12px 0px rgba(0,255,255,0.7);
+}
+
+.card-trip > img {
+  height: 400px;
+  width: 500px;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-trip-infos .card-trip-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+.photo-unleash {
+  height: 400px;
+  width: 500px;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  margin: auto;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+}
+.card-text-posted {
+  align-items: center;
+  background-color: $gray;
+  color: white;
+  height: 100%;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card-full-posted-right {
+  border-radius: 0 5px 5px 0;
+}
+.card-full-posted-left {
+  border-radius: 5px 0 0 5px;
+}

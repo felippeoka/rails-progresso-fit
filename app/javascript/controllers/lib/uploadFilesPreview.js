@@ -1,7 +1,7 @@
 const uploadFilesPreview = (image, imagePlace) => {
   image.addEventListener("change", (event) => {
     imagePlace.innerHTML = ""
-
+    console.log(imagePlace)
     const file = image.files[0]
     for (const file of image.files) {
       const fr = new FileReader()
