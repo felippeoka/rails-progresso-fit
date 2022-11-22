@@ -121,3 +121,14 @@ font-family: "Montserrat";
 }
 
 //cards
+.cards-home {
+  padding: 7% 15%;
+  background-color: white;
+  display: flex;
+}
+
+.card-image-top {
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+}
