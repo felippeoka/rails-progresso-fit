@@ -142,3 +142,27 @@ font-family: "Montserrat";
             2px 4px 4px 0px rgba(5,1,0,0.7),
             2px 4px 12px 0px rgba(5,1,0,0.7);
 }
+
+//footer
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 60px;
+  padding: 0px 50px;
+}
+.footer-links {
+  color: rgb(230, 77, 51);
+  display: flex;
+}
+.footer-links a {
+  color: rgb(230, 77, 51);
+  opacity: 1.0;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 0.7;
+}
