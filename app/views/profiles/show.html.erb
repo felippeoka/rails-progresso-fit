@@ -1,45 +1,41 @@
 <div class="container">
-
- <div class="row d-flex justify-content-center">
+  <div class="row d-flex justify-content-center">
     <div class="col-sm-10">
-
       <div class="card-show mt-3 d-flex justify-content-between">
         <div class="text-center fixed-sidebar-container row">
           <h1>Overall</h1>
           <%# <div class="card"> %>
           <ul class="list-group list-group-horizontal">
-          <div class="stat-subtext">Age
-            <li class="list-group"><%= ((Time.zone.now - current_user.birthday.to_time) / 1.year.seconds).floor %>y/o</li>
-          </div>
-          <div class="linha-vertical">
-          </div>
-          <div class="stat-subtext">Weight
-            <li class="list-group"><%= current_user.weights.last.value %>kg</li>
-          </div>
-          <div class="linha-vertical">
-          </div>
-          <div class="stat-subtext">Height
-            <li class="list-group"><%= (current_user.height)/100 %>m</li>
-          </div>
+            <div class="stat-subtext">Age
+              <li class="list-group"><%= current_user.birthday.nil? ? 0 : ((Time.zone.now - current_user.birthday&.to_time) / 1.year.seconds).floor %>y/o</li>
+            </div>
+            <div class="linha-vertical">
+            </div>
+            <div class="stat-subtext">Weight
+              <li class="list-group"><%= current_user.weights.last&.value %>kg</li>
+            </div>
+            <div class="linha-vertical">
+            </div>
+            <div class="stat-subtext">Height
+              <li class="list-group"><%= (current_user.height.nil? ? 0 : (current_user.height))/100 %>m</li>
+            </div>
           </ul>
           <%= link_to "Post a new weight", new_weight_path, class: "link-secondary mt-4" %>
-          </div>
-           <%# <div class="row d-flex justify-content-center"> %>
-          <%# </div> %>
-          <h3>BMI: <%= current_user.imc_calc %> - <%=  current_user.imc_message %></h3>
-          <h3><%=  current_user.progress_from_min %></h3>
-          <h3><%=  current_user.progress_from_begin %></h3>
-          <h3>Ideal weight: <%= current_user.ideal_weight %></h3>
         </div>
-
-<%# current_user.weights.pluck(:weight) %>
-
+        <%# <div class="row d-flex justify-content-center"> %>
+        <%# </div> %>
+        <h3>BMI: <%= current_user&.imc_calc unless !current_user&.imc_calc.nil? %> - <%=  current_user&.imc_message unless !current_user&.imc_message.nil? %></h3>
+        <h3><%=  current_user&.progress_from_min %></h3>
+        <h3><%=  current_user&.progress_from_begin %></h3>
+        <h3>Ideal weight: <%= current_user&.ideal_weight %></h3>
+      </div>
+      <%# current_user.weights.pluck(:weight) %>
       <div class="card-show mt-3 d-flex justify-content-center">
         <div class="text-center w-100 p-3">
           <h3>Progress</h3>
-          <h3> <%= line_chart current_user.weights.pluck(:created_at, :value),
-          min: current_user.sort_weight.first - 10,
-          max: current_user.sort_weight.last + 10,
+          <h3> <%= line_chart current_user&.weights&.pluck(:created_at, :value),
+          min: current_user&.sort_weight.first - 10,
+          max: current_user&.sort_weight.last + 10,
           label: "Weight",
           suffix: " kg",
           colors: ["#E74C3C"],
@@ -49,13 +45,20 @@
       </div>
 
       <div class="card-show mt-3 d-flex justify-content-center">
+        <div class="text-center w-100 p-3">
+          <h3>Progress</h3>
+          <div class="d-flex align-items-center flex-column-reverse mt-3">
+
+          </div>
+        </div>
+      </div>
+      
+      <div class="card-show mt-3 d-flex justify-content-center">
         <div class="text-center animate__animated animate__bounce">
           <h3>Photos</h3>
           <div class="d-flex align-items-center flex-column-reverse mt-3">
             <% current_user.weights.each do |weight| %>
-
               <%= render "card", weight: weight %>
-
             <% end %>
           </div>
         </div>
@@ -63,4 +66,3 @@
     </div>
   </div>
 </div>
-

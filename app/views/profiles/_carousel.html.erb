@@ -1,11 +1,16 @@
 <div id="carouselExampleIndicators<%= weight.id %>" class="carousel slide" data-bs-ride="true">
   <div class="carousel-inner">
-    
+    <% if weight.photos.empty? %>
+      <div class="custom-file-container" data-upload-id="myFirstImage">
+        <div class="photo-card mb-1 mt-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8Ym9keWJ1aWxkZXJ8fHx8fHwxNjY4ODY1NTEy&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=700)"></div>
+      </div>
+    <% else %>
         <% weight.photos.each_with_index do |photo, index| %>
           <div class="carousel-item <%= 'active' if index.zero? %>">
             <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, style:"border-radius:5px;"  %>
           </div>
         <% end %>
+    <% end %>
   </div>
     
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators<%= weight.id %>" data-bs-slide="prev">
@@ -18,4 +23,3 @@
   </button>
 
 </div>
-
