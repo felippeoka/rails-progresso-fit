@@ -7,7 +7,7 @@
       <h1 class="h1-home text-shadow">IT'S ALL ABOUT WHAT YOU CAN ACHIEVE</h1>
       <h5 class="h5-home text-shadow">GET FIT, STRONG & MOTIVATED</h5>
       <div>
-      <% if current_user.height.nil?  %>
+      <% if current_user&.height&.nil?  %>
         <%= link_to user_full_profile_path(user_id: current_user&.id), class: "btn btn-lg btn-color main-button registration-button" do %>
           <i class="fa-solid fa-dumbbell"></i> START NOW
         <% end %>
