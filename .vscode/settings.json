@@ -1,0 +1,12 @@
+{
+  "[ruby]": {
+    "editor.tabSize": 2
+  }
+}
+
+"ruby.rubocop.onSave": true,
+"editor.formatOnSave": true,
+"files.associations": {
+   "*.erb": "erb"
+   "*.html.erb": "erb"
+},
