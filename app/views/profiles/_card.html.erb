@@ -1,11 +1,11 @@
 <div class="card mb-3 animate__animated animate__bounce" style="max-width: 540px; border-radius:5px;">
   <div class="row g-0">
-    <div class="col-md-4 card-full-posted-left">
+    <div class="col-md-6 card-full-posted-left">
 
       <%= render "carousel", weight: weight %>
-      
+
     </div>
-    <div class="col-md-8 card-full-posted-right">
+    <div class="col-md-6 card-full-posted-right">
       <div class="card-text-posted d-flex card-full-posted-right">
         <h5>Weight: <%= weight.value %></h5>
         <p>Date: <%= weight.created_at.strftime("%d/%b/%Y") %></p>
