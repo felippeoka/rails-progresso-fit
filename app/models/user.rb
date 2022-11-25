@@ -18,7 +18,9 @@ class User < ApplicationRecord
   end
 
   def progress_from_min
+    return "ainda sem info" if weight_min_with_date.nil?
     last_weight = weights_all.last
+    
     calc = weight_min_with_date[0] - last_weight
 
     if calc.positive?
@@ -31,6 +33,7 @@ class User < ApplicationRecord
   def progress_from_begin
     last_weight = weights_all.last
     first_weight = weights_all.first
+    return "ainda sem info" if first_weight.nil? || last_weight.nil?
     calc = first_weight - last_weight
 
     if calc.positive?
@@ -42,8 +45,12 @@ class User < ApplicationRecord
 
   def imc_calc
     last_weight = weights_all.last
-    imc = last_weight / ((height**2) / 10_000)
-    @imc = imc.round(2)
+    if height
+      imc = last_weight / ((height**2) / 10_000)
+      @imc = imc.round(2)
+    else
+      @imc = 0
+    end
   end
 
   def imc_message
@@ -67,6 +74,7 @@ class User < ApplicationRecord
   end
 
   def ideal_weight
+    return 0 if height.nil?
     if self == "male"
       ideal_weight = 22 * ((height / 100)**2)
       ideal_weight.round(2)

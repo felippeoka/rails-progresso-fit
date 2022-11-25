@@ -34,8 +34,8 @@
         <div class="text-center w-100 p-3">
           <h3>Progress</h3>
           <h3> <%= line_chart current_user&.weights&.pluck(:created_at, :value),
-          min: current_user&.sort_weight.first - 10,
-          max: current_user&.sort_weight.last + 10,
+          min: (current_user&.sort_weight&.first || 10) - 10,
+          max: (current_user&.sort_weight&.last || -10) + 10,
           label: "Weight",
           suffix: " kg",
           colors: ["#E74C3C"],
