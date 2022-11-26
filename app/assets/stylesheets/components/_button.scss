@@ -1,0 +1,17 @@
+.btn-outline-red {
+  border: 1px solid $red;
+  padding: 8px 24px;
+  border-radius: 5px;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+  width: 90%;
+  color: $red !important;
+  background-color: white;
+}
+
+.btn-outline-red:hover {
+  opacity: 1;
+  border: 1px solid #4A4A4A;
+  background-color: $red;
+  color: white !important;
+}
