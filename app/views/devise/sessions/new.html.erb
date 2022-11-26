@@ -18,24 +18,24 @@
                     required: false,
                     autofocus: true,
                     placeholder: 'user@domain.com',
-                    input_html: { autocomplete: "email", class:"text-dark" } %>
+                    input_html: { autocomplete: "email", class:"text-dark rounded-pill" } %>
         <%= f.input :password,
                     required: false,
                     placeholder: '••••••',
-                    input_html: { autocomplete: "current-password", class:"text-dark " } %>
+                    input_html: { autocomplete: "current-password", class:"text-dark rounded-pill" } %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
       <div class="form-actions d-grid gap-2">
-        <%= f.button :submit, "Log in", class: "btn btn-outline-secondary text-white" %>
+        <%= f.button :submit, "Log in", class: "btn btn-outline-secondary text-white rounded-pill" %>
       </div>
       <% end %>
     </div>
     <div class="d-flex justify-content-center">
-    <%= link_to "Forgot your password?", new_password_path(resource_name), class:"link-secondary mt-3 text-white" %>
+    <%= link_to "Forgot your password?", new_password_path(resource_name), class:"link-secondary mt-3 text-white rounded-pill" %>
     </div>
     <div class="d-flex justify-content-center mt-3 text-white">
     <span>Don't have an account?</span>
-    <%= link_to "Sign up", new_registration_path(resource_name), class: "link-secondary ms-1 text-white" %>
+    <%= link_to "Sign up", new_registration_path(resource_name), class: "link-secondary ms-1 text-white rounded-pill" %>
     </div>
   </div>
 </div>

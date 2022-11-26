@@ -17,29 +17,29 @@
         <%= f.input :first_name,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "João", class:"text-dark" }%>
+                input_html: { autocomplete: "João", class:"text-dark", class:"rounded-pill" }%>
         <%= f.input :last_name,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "Silva", class:"text-dark" }%>
+                input_html: { autocomplete: "Silva", class:"text-dark", class:"rounded-pill" }%>
         <%= f.input :phone,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "(11) 9.9228-3960", class:"text-dark" }%>
+                input_html: { autocomplete: "(11) 9.9228-3960", class:"text-dark", class:"rounded-pill" }%>
         <%= f.input :email,
                 required: true,
                 autofocus: true,
-                input_html: { autocomplete: "email", class:"text-dark" }%>
+                input_html: { autocomplete: "email", class:"text-dark", class:"rounded-pill" }%>
         <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password", class:"text-dark" } %>
+                input_html: { autocomplete: "new-password", class:"text-dark", class:"rounded-pill"} %>
         <%= f.input :password_confirmation,
                 required: true,
-                input_html: { autocomplete: "new-password", class:"text-dark" } %>
+                input_html: { autocomplete: "new-password", class:"text-dark", class:"rounded-pill"}%>
         </div>
         <div class="form-actions d-grid gap-2">
-          <%= f.button :submit, "Sign up", class: "btn btn-outline-secondary text-white" %>
+          <%= f.button :submit, "Sign up", class: "btn btn-outline-secondary text-white rounded-pill" %>
         </div>
         <% end %>
         <div class="d-flex justify-content-center mt-3">

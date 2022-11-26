@@ -8,11 +8,11 @@
       <h5 class="h5-home text-shadow">GET FIT, STRONG & MOTIVATED</h5>
       <div>
       <% if current_user&.height&.nil?  %>
-        <%= link_to user_full_profile_path(user_id: current_user&.id), class: "btn btn-lg btn-color main-button registration-button" do %>
+        <%= link_to user_full_profile_path(user_id: current_user&.id), class: "btn btn-lg btn-color main-button registration-button rounded-pill" do %>
           <i class="fa-solid fa-dumbbell"></i> START NOW
         <% end %>
       <% else %>
-        <%= link_to profiles_path, class: "btn btn-lg btn-color main-button registration-button" do %>
+        <%= link_to profiles_path, class: "btn btn-lg btn-color main-button registration-button rounded-pill" do %>
           <i class="fa-solid fa-dumbbell"></i> START NOW
         <% end %>
       <% end %>

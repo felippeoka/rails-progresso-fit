@@ -6,18 +6,18 @@
     <%= simple_form_for @user, url: user_full_profile_path, method: :patch do |f| %>
     <%= f.error_notification %>
     <div class="form-inputs text-white">
-      <%= f.input :phone, required: true, autofocus: true, input_html: { class: 'bg-white', class:"text-dark"  }  %>
+      <%= f.input :phone, required: true, autofocus: true, input_html: { class: 'bg-white', class:"text-dark rounded-pill"  }  %>
       <%= f.input :birthday, :order => [:day, :month, :year], required: true, start_year: Date.today.year - 90,
-                              end_year: Date.today.year - 12, input_html: { class: 'bg-white', class:"text-dark"  }  %>
-      <%= f.input :height, label: "Height (centimeters)", required: true, autofocus: true, input_html: { min: '90', max: '230', class: 'bg-white', class:"text-dark"  }  %>
-      <%= f.input :gender, collection: User::GENDERS, required: true, autofocus: true, input_html: { class: 'bg-white', class:"text-dark"  }  %>
-      <%= f.input :photo, as: :file, input_html: { class: 'bg-white', class:"text-dark"  } %>
+                              end_year: Date.today.year - 12, input_html: { class: 'bg-white', class:"text-dark rounded-pill"  }  %>
+      <%= f.input :height, label: "Height (centimeters)", required: true, autofocus: true, input_html: { min: '90', max: '230', class: 'bg-white', class:"text-dark rounded-pill"  }  %>
+      <%= f.input :gender, collection: User::GENDERS, required: true, autofocus: true, input_html: { class: 'bg-white', class:"text-dark rounded-pill"  }  %>
+      <%= f.input :photo, as: :file, input_html: { class: 'bg-white', class:"text-dark rounded-pill"  } %>
       <%= f.simple_fields_for :weight do |w| %>
         <%= w.input :value, as: :numeric %>
       <% end %>
     </div>
     <div class="form-actions d-grid gap-2 mt-4">
-      <%= f.button :submit, "Update", class: "btn btn-outline-secondary text-white" %>
+      <%= f.button :submit, "Update", class: "btn btn-outline-secondary text-white rounded-pill" %>
     </div>
   </div>
   <% end %>

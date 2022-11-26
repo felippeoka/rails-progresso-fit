@@ -6,15 +6,15 @@
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
     <div class="form-inputs text-white">
-      <%= f.input :email, required: true, autofocus: true, input_html: { class: 'bg-white', class:"text-dark"  } %>
-      <%= f.input :first_name, required: true, autofocus: true, input_html: { class: 'bg-white', class:"text-dark"  }  %>
-      <%= f.input :last_name, required: true, autofocus: true, input_html: { class: 'bg-white', class:"text-dark"  }  %>
-      <%= f.input :phone, required: true, autofocus: true, input_html: { class: 'bg-white', class:"text-dark"  }  %>
+      <%= f.input :email, required: true, autofocus: true, input_html: { class: 'bg-white', class:"text-dark", class:"rounded-pill"  } %>
+      <%= f.input :first_name, required: true, autofocus: true, input_html: { class: 'bg-white', class:"text-dark", class:"rounded-pill" }  %>
+      <%= f.input :last_name, required: true, autofocus: true, input_html: { class: 'bg-white', class:"text-dark", class:"rounded-pill"  }  %>
+      <%= f.input :phone, required: true, autofocus: true, input_html: { class: 'bg-white', class:"text-dark", class:"rounded-pill"  }  %>
       <%= f.input :birthday, :order => [:day, :month, :year], required: true, start_year: Date.today.year - 90,
-                              end_year: Date.today.year - 12, input_html: { class: 'bg-white', class:"text-dark"  }  %>
-      <%= f.input :height, label: "Height (centimeters)", required: true, autofocus: true, input_html: { min: '90', max: '230', class: 'bg-white', class:"text-dark"  }  %>
-      <%= f.input :gender, collection: User::GENDERS, required: true, autofocus: true, input_html: { class: 'bg-white', class:"text-dark"  }  %>
-      <%= f.input :photo, as: :file, input_html: { class: 'bg-white', class:"text-dark"  } %>
+                              end_year: Date.today.year - 12, input_html: { class: 'bg-white', class:"text-dark", class:"rounded-pill"  }  %>
+      <%= f.input :height, label: "Height (centimeters)", required: true, autofocus: true, input_html: { min: '90', max: '230', class: 'bg-white', class:"text-dark", class:"rounded-pill"  }  %>
+      <%= f.input :gender, collection: User::GENDERS, required: true, autofocus: true, input_html: { class: 'bg-white', class:"text-dark", class:"rounded-pill"  }  %>
+      <%= f.input :photo, as: :file, input_html: { class: 'bg-white', class:"text-dark", class:"rounded-pill"  } %>
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
       <% end %>
@@ -22,21 +22,21 @@
       <%= f.input :current_password,
                   hint: "we need your current password to confirm your changes",
                   required: true,
-                  input_html: { autocomplete: "current-password", class:"text-dark"  } %>
+                  input_html: { autocomplete: "current-password", class:"text-dark rounded-pill"  } %>
       <%= f.input :password, label: "New Password",
                   hint: "leave it blank if you don't want to change it",
                   required: false,
-                  input_html: { autocomplete: "new-password", class:"text-dark"  } %>
+                  input_html: { autocomplete: "new-password", class:"text-dark rounded-pill"  } %>
       <%= f.input :password_confirmation,
                   required: false,
-                  input_html: { autocomplete: "new-password", class:"text-dark"  } %>
+                  input_html: { autocomplete: "new-password", class:"text-dark rounded-pill"  } %>
     </div>
     <div class="form-actions d-grid gap-2 mt-4">
-      <%= f.button :submit, "Update", class: "btn btn-outline-secondary text-white" %>
+      <%= f.button :submit, "Update", class: "btn btn-outline-secondary text-white rounded-pill" %>
     </div>
   </div>
   <% end %>
   <div class="d-flex justify-content-center mt-3 text-white">
-    <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "link-secondary ms-1 text-white" %></p>
+    <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "link-secondary ms-1 text-white rounded-pill" %></p>
   </div>
 </div>
