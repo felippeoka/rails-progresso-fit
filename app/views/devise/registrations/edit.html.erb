@@ -22,17 +22,17 @@
       <%= f.input :current_password,
                   hint: "we need your current password to confirm your changes",
                   required: true,
-                  input_html: { autocomplete: "current-password", class:"text-dark"  } %>
+                  input_html: { autocomplete: "current-password", class:"text-dark rounded-pill"  } %>
       <%= f.input :password, label: "New Password",
                   hint: "leave it blank if you don't want to change it",
                   required: false,
-                  input_html: { autocomplete: "new-password", class:"text-dark"  } %>
+                  input_html: { autocomplete: "new-password", class:"text-dark rounded-pill"  } %>
       <%= f.input :password_confirmation,
                   required: false,
-                  input_html: { autocomplete: "new-password", class:"text-dark"  } %>
+                  input_html: { autocomplete: "new-password", class:"text-dark rounded-pill"  } %>
     </div>
     <div class="form-actions d-grid gap-2 mt-4">
-      <%= f.button :submit, "Update", class: "btn btn-outline-secondary text-white" %>
+      <%= f.button :submit, "Update", class: "btn btn-outline-secondary text-white rounded-pill" %>
     </div>
   </div>
   <% end %>

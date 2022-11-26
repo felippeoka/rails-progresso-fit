@@ -18,15 +18,15 @@
                     required: false,
                     autofocus: true,
                     placeholder: 'user@domain.com',
-                    input_html: { autocomplete: "email", class:"text-dark" } %>
+                    input_html: { autocomplete: "email", class:"text-dark rounded-pill" } %>
         <%= f.input :password,
                     required: false,
                     placeholder: '••••••',
-                    input_html: { autocomplete: "current-password", class:"text-dark " } %>
+                    input_html: { autocomplete: "current-password", class:"text-dark rounded-pill" } %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
       <div class="form-actions d-grid gap-2">
-        <%= f.button :submit, "Log in", class: "btn btn-outline-secondary text-white" %>
+        <%= f.button :submit, "Log in", class: "btn btn-outline-secondary text-white rounded-pill" %>
       </div>
       <% end %>
     </div>
