@@ -172,3 +172,35 @@
   object-position: center;
   width: 100%;
 }
+
+.card-body-progress {
+  background-color: $gray;
+  color: white;
+}
+
+.card-title-progress {
+  background-color: white;
+  color: $red;
+}
+
+.card-progress {
+  border-color: silver;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  width: 100%;
+
+  .fa-dumbbell {
+    color: $red;
+  }
+
+  .fa-calendar-days {
+    color: $red;
+  }
+}
+
+@media(min-width: 992px) {
+  .card-progress {
+    width: 49%;
+  }
+}

@@ -39,7 +39,7 @@
       <%# current_user.weights.pluck(:weight) %>
       <div class="card-show mt-3 d-flex justify-content-center">
         <div class="text-center w-100 p-3">
-          <h3>Progress</h3>
+          <h2>Progress in Graph</h2>
           <h3> <%= line_chart current_user&.weights&.pluck(:created_at, :value),
           min: (current_user&.sort_weight&.first || 10) - 10,
           max: (current_user&.sort_weight&.last || -10) + 10,
@@ -53,20 +53,76 @@
 
       <div class="card-show mt-3 d-flex justify-content-center">
         <div class="text-center w-100 p-3">
-          <h3>Progress</h3>
-          <div class="d-flex align-items-center flex-column-reverse mt-3">
+          <h2>Progress in Photo</h2>
+          <div class="m-3">
+          
 
-          </div>
-        </div>
+<%# ------------------------------------------------------ %>
+<div class="d-flex flex-wrap justify-content-between">
+  <div class="p-3 card-progress">
+    <div class="card-body-progress mb-2">
+      <h4 class="card-title-progress">In the beginning</h4>
+    </div>
+
+    <div id="carouselExampleInterval<%= current_user.weights.first.id %>" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner rounded">
+        <% current_user.weights.first.photos.each_with_index do |photo, index| %>
+            <div class="carousel-item <%= 'active' if index.zero? %>">
+              <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, style:"border-radius:5px;", class:"d-block w-100" %>
+            </div>
+        <% end %>
       </div>
 
-      <div class="card-show mt-3 d-flex justify-content-center">
-        <div class="text-center animate__animated animate__bounce">
-          <h3>Photos</h3>
-          <div class="d-flex align-items-center flex-column-reverse mt-3">
-            <%# <% current_user.weights.each do |weight| %> 
-              <%# <%= render "card", weight: weight %>
-            <%# <% end %>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval<%= current_user.weights.first.id %>" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval<%= current_user.weights.first.id %>" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><i class="fa-solid fa-dumbbell"></i> <%= current_user.weights.first.value %> kg</li>
+    <li class="list-group-item"><i class="fa-solid fa-calendar-days"></i> <%= current_user.weights.first.created_at.strftime('%d/%b/%Y') %></li>
+    <%= button_to "Show", "weight_path(weight.first)", class: "btn-outline-red m-3"  %>
+  </ul>
+
+</div>
+<%# ------------------- %>
+<div class="p-3 card-progress">
+    <div class="card-body-progress mb-2">
+      <h4 class="card-title-progress">Currently</h4>
+    </div>
+  <div id="carouselExampleInterval<%= current_user.weights.last.id %>" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner rounded">
+        <% current_user.weights.last.photos.each_with_index do |photo, index| %>
+            <div class="carousel-item <%= 'active' if index.zero? %>">
+              <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, style:"border-radius:5px;", class:"d-block w-100" %>
+            </div>
+        <% end %>
+      </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval<%= current_user.weights.last.id %>" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval<%= current_user.weights.last.id %>" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><i class="fa-solid fa-dumbbell"></i> <%= current_user.weights.last.value %> kg</li>
+    <li class="list-group-item"><i class="fa-solid fa-calendar-days"></i> <%= current_user.weights.last.created_at.strftime('%d/%b/%Y') %></li>
+    <%= button_to "Show", "weight_path(@weight.last)", class: "btn-outline-red m-3"  %>
+  </ul>
+  </div>
+
+            
+<%# ------------------------------------------------------ %>
           </div>
         </div>
       </div>
