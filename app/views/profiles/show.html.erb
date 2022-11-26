@@ -3,7 +3,7 @@
     <div class="col-sm-10">
       <div class="card-show mt-3 d-flex justify-content-between">
         <div class="text-center fixed-sidebar-container row">
-          <h1>Overall</h1>
+          <%= cl_image_tag(current_user.photo.key, width: 150, height: 100, crop: :thumb, gravity: :face, class: "rounded-circle float-start", 'aria-haspopup': true, 'aria-expanded': false) %>
           <%# <div class="card"> %>
           <ul class="list-group list-group-horizontal">
             <div class="stat-subtext">Age
@@ -29,6 +29,13 @@
         <h3><%=  current_user&.progress_from_begin %></h3>
         <h3>Ideal weight: <%= current_user&.ideal_weight %></h3>
       </div>
+      <div class="progress-bar">
+        <div class="w-100 d-flex align-items-center position-relative justify-content-between">
+            <div style="z-index: 30;" class="text-start text-white p-3"><b><%= current_user.min_weight.to_i  %>kg</b></div>
+            <div id="current-weight" style="z-index: 30;" class="border text-dark border-dark border-opacity-50 rounded-pill p-2 position-absolute"><b><%= current_user.weights.last&.value %>kg</b></div>
+            <div style="z-index: 30;" class="text-end text-white p-3"><b><%= current_user.max_weight.to_i  %>kg</b></div>
+        </div>
+        </div>
       <%# current_user.weights.pluck(:weight) %>
       <div class="card-show mt-3 d-flex justify-content-center">
         <div class="text-center w-100 p-3">
@@ -52,7 +59,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="card-show mt-3 d-flex justify-content-center">
         <div class="text-center animate__animated animate__bounce">
           <h3>Photos</h3>
@@ -66,3 +73,15 @@
     </div>
   </div>
 </div>
+
+<script>
+// window.addEventListener('locationchange', () => {
+// …
+// });
+window.addEventListener('load', () => {
+  const currentWeight = document.getElementById("current-weight");
+  const percentage = <%= current_user.percentage %>;
+  const leftValue = `calc(${percentage}% - ${currentWeight.offsetWidth / 2}px)`;
+  currentWeight.style.left = leftValue;
+});
+</script>

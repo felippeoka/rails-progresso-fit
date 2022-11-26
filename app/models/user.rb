@@ -20,7 +20,7 @@ class User < ApplicationRecord
   def progress_from_min
     return "ainda sem info" if weight_min_with_date.nil?
     last_weight = weights_all.last
-    
+
     calc = weight_min_with_date[0] - last_weight
 
     if calc.positive?
@@ -28,6 +28,18 @@ class User < ApplicationRecord
     else
       "You have gained MIN #{calc.abs} kg since #{weight_min_with_date[1].strftime('%d/%b/%Y')}"
     end
+  end
+
+  def max_weight
+    (40 * ((height)/100)**2)
+  end
+
+  def min_weight
+    (18.5 * ((height)/100)**2)
+  end
+
+  def percentage
+    100 / (max_weight - min_weight) * (weights.last&.value - min_weight)
   end
 
   def progress_from_begin
