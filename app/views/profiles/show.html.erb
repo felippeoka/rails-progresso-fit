@@ -3,7 +3,8 @@
     <div class="col-sm-10">
       <div class="card-show mt-3 d-flex justify-content-between">
         <div class="text-center fixed-sidebar-container row">
-
+          <%= cl_image_tag(current_user.photo.key, gravity: :face, class: "rounded-circle") %>
+          <%# <div class="card"> %>
           <ul class="list-group list-group-horizontal">
             <div class="stat-subtext">Age
               <li class="list-group"><%= current_user.birthday.nil? ? 0 : ((Time.zone.now - current_user.birthday&.to_time) / 1.year.seconds).floor %>y/o</li>
@@ -57,7 +58,7 @@
         <div class="text-center w-100 p-3">
           <h2>Progress in Photo</h2>
           <div class="m-3">
-          
+
 
 <%# ------------------------------------------------------ %>
 <div class="d-flex flex-wrap justify-content-between">
@@ -123,7 +124,7 @@
   </ul>
   </div>
 
-            
+
 <%# ------------------------------------------------------ %>
           </div>
         </div>
