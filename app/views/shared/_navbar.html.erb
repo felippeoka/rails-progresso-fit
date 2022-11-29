@@ -1,8 +1,16 @@
 <div class="navbar navbar-expand-md navbar-dark bg-black navbar-lewagon mt-3 mb-3">
   <div class="container-nav">
-    <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "Progresso Fit png9.png" %>
+
+    <% if user_signed_in? %>
+      <%= link_to profiles_path, class: "navbar-brand" do %>
+        <%= image_tag "Progresso Fit png9.png" %>
+      <% end %>
+    <% else %>
+      <%= link_to "/", class: "navbar-brand" do %>
+        <%= image_tag "Progresso Fit png9.png" %>
+      <% end %>
     <% end %>
+
   </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -11,7 +19,7 @@
     <div class="collapse container-nav navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <% if user_signed_in? %>
-           <li class="name foo"><%= "#{current_user.first_name}  #{current_user.last_name}" %>
+          <li class="name foo"><%= "#{current_user.first_name}  #{current_user.last_name}" %>
           </li>
           <li class="nav-item dropdown">
             <% if current_user.photo.attached? %>
