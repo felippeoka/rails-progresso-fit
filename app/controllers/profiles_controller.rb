@@ -6,6 +6,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
+    @weight
   end
 
   def full_profile_edit

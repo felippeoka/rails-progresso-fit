@@ -3,8 +3,7 @@
     <div class="col-sm-10">
       <div class="card-show mt-3 d-flex justify-content-between">
         <div class="text-center fixed-sidebar-container row">
-          <%= cl_image_tag(current_user.photo.key, width: 150, height: 100, crop: :thumb, gravity: :face, class: "rounded-circle float-start", 'aria-haspopup': true, 'aria-expanded': false) %>
-          <%# <div class="card"> %>
+
           <ul class="list-group list-group-horizontal">
             <div class="stat-subtext">Age
               <li class="list-group"><%= current_user.birthday.nil? ? 0 : ((Time.zone.now - current_user.birthday&.to_time) / 1.year.seconds).floor %>y/o</li>
@@ -22,9 +21,12 @@
           </ul>
           <%= link_to "Post a new weight", new_weight_path, class: "link-secondary mt-4" %>
         </div>
+
+        <%# <%= image_tag "bmi_illustration.png", alt: "bmi_illustration", width: 200 %> %>
+
         <%# <div class="row d-flex justify-content-center"> %>
         <%# </div> %>
-        <h3>BMI: <%= current_user&.imc_calc unless !current_user&.imc_calc.nil? %> - <%=  current_user&.imc_message unless !current_user&.imc_message.nil? %></h3>
+        <h3>BMI: <%= current_user&.imc_calc unless current_user&.imc_calc.nil? %> - <%=  current_user&.imc_message unless !current_user&.imc_message.nil? %></h3>
         <h3><%=  current_user&.progress_from_min %></h3>
         <h3><%=  current_user&.progress_from_begin %></h3>
         <h3>Ideal weight: <%= current_user&.ideal_weight %></h3>
