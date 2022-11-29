@@ -22,9 +22,12 @@
           </ul>
           <%= link_to "Post a new weight", new_weight_path, class: "link-secondary mt-4" %>
         </div>
+
+        <%# <%= image_tag "bmi_illustration.png", alt: "bmi_illustration", width: 200 %> %>
+
         <%# <div class="row d-flex justify-content-center"> %>
         <%# </div> %>
-        <h3>BMI: <%= current_user&.imc_calc unless !current_user&.imc_calc.nil? %> - <%=  current_user&.imc_message unless !current_user&.imc_message.nil? %></h3>
+        <h3>BMI: <%= current_user&.imc_calc unless current_user&.imc_calc.nil? %> - <%=  current_user&.imc_message unless !current_user&.imc_message.nil? %></h3>
         <h3><%=  current_user&.progress_from_min %></h3>
         <h3><%=  current_user&.progress_from_begin %></h3>
         <h3>Ideal weight: <%= current_user&.ideal_weight %></h3>

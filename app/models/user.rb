@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+        :recoverable, :rememberable, :validatable
   GENDERS = ['Male', 'Female', 'Other']
 
   validates :email, :first_name, :last_name, :phone, presence: true
@@ -18,7 +18,7 @@ class User < ApplicationRecord
   end
 
   def progress_from_min
-    return "ainda sem info" if weight_min_with_date.nil?
+    return "no data" if weight_min_with_date.nil?
     last_weight = weights_all.last
 
     calc = weight_min_with_date[0] - last_weight
@@ -39,13 +39,17 @@ class User < ApplicationRecord
   end
 
   def percentage
-    100 / (max_weight - min_weight) * (weights.last&.value - min_weight)
+    if weights.last
+      100 / (max_weight - min_weight) * (weights.last&.value - min_weight)
+    else
+      50
+    end
   end
 
   def progress_from_begin
     last_weight = weights_all.last
     first_weight = weights_all.first
-    return "ainda sem info" if first_weight.nil? || last_weight.nil?
+    return "no data" if first_weight.nil? || last_weight.nil?
     calc = first_weight - last_weight
 
     if calc.positive?
@@ -57,7 +61,7 @@ class User < ApplicationRecord
 
   def imc_calc
     last_weight = weights_all.last
-    if height
+    if height && last_weight
       imc = last_weight / ((height**2) / 10_000)
       @imc = imc.round(2)
     else
