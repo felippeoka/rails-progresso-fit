@@ -1,9 +1,12 @@
 <div class="container">
   <div class="row d-flex justify-content-center">
-    <div class="col-sm-10">
+    <div class="col-sm-12">
       <div class="card-show mt-3 d-flex justify-content-between">
         <div class="text-center fixed-sidebar-container row">
-
+        <div class="justify-content-center">
+          <%= cl_image_tag(current_user.photo.key, width: 60, height: 60, class: "profile-pic shadow", 'aria-haspopup': true, 'aria-expanded': false) %>
+           </div>
+           <div class="d-flex justify-content-center">
           <ul class="list-group list-group-horizontal">
             <div class="stat-subtext">Age
               <li class="list-group"><%= current_user.birthday.nil? ? 0 : ((Time.zone.now - current_user.birthday&.to_time) / 1.year.seconds).floor %>y/o</li>
@@ -18,26 +21,30 @@
             <div class="stat-subtext">Height
               <li class="list-group"><%= (current_user.height.nil? ? 0 : (current_user.height))/100 %>m</li>
             </div>
+            </div>
           </ul>
           <%= link_to "Post a new weight", new_weight_path, class: "link-secondary mt-4" %>
         </div>
 
-        <%# <%= image_tag "bmi_illustration.png", alt: "bmi_illustration", width: 200 %> %>
+        <%# <%= image_tag "bmi_illustration.png", alt: "bmi_illustration", width: 200 %>
 
         <%# <div class="row d-flex justify-content-center"> %>
         <%# </div> %>
-        <h3>BMI: <%= current_user&.imc_calc unless current_user&.imc_calc.nil? %> - <%=  current_user&.imc_message unless !current_user&.imc_message.nil? %></h3>
-        <h3><%=  current_user&.progress_from_min %></h3>
-        <h3><%=  current_user&.progress_from_begin %></h3>
-        <h3>Ideal weight: <%= current_user&.ideal_weight %></h3>
+        <div class="col-9 text-center">
+        <h3 class="">BMI: <%= current_user&.imc_calc unless current_user&.imc_calc.nil? %> - <%=  current_user&.imc_message unless !current_user&.imc_message.nil? %> Ideal weight: <%= current_user&.ideal_weight %>kg</h3>
+        <!--<h3><%=  current_user&.progress_from_min %></h3>
+        <h3><%=  current_user&.progress_from_begin %></h3>!-->
+        <br>
+        <%= render "profiles/BMI_bar"%>
+        </div>
       </div>
-      <div class="progress-bar">
+      <!-- <div class="progress-bar">
         <div class="w-100 d-flex align-items-center position-relative justify-content-between">
             <div style="z-index: 30;" class="text-start text-white p-3"><b><%= current_user.min_weight.to_i  %>kg</b></div>
             <div id="current-weight" style="z-index: 30;" class="border text-dark border-dark border-opacity-50 rounded-pill p-2 position-absolute"><b><%= current_user.weights.last&.value %>kg</b></div>
             <div style="z-index: 30;" class="text-end text-white p-3"><b><%= current_user.max_weight.to_i  %>kg</b></div>
         </div>
-        </div>
+        </div> !-->
       <%# current_user.weights.pluck(:weight) %>
       <div class="card-show mt-3 d-flex justify-content-center">
         <div class="text-center w-100 p-3">
@@ -57,7 +64,7 @@
         <div class="text-center w-100 p-3">
           <h2>Progress in Photo</h2>
           <div class="m-3">
-          
+
 
 <%# ------------------------------------------------------ %>
 <div class="d-flex flex-wrap justify-content-between">
@@ -123,7 +130,7 @@
   </ul>
   </div>
 
-            
+
 <%# ------------------------------------------------------ %>
           </div>
         </div>
@@ -132,7 +139,7 @@
   </div>
 </div>
 
-<script>
+<!--<script>
 // window.addEventListener('locationchange', () => {
 // …
 // });
@@ -142,4 +149,4 @@ window.addEventListener('load', () => {
   const leftValue = `calc(${percentage}% - ${currentWeight.offsetWidth / 2}px)`;
   currentWeight.style.left = leftValue;
 });
-</script>
+</script>!-->
