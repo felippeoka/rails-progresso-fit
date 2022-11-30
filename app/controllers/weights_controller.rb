@@ -5,7 +5,8 @@ class WeightsController < ApplicationController
       # @weights = Weight.where(:created_at ==  params[:search][:created_at])
       # sql_query = "value ILIKE :query OR created_at ILIKE :query"
       # @weight = Weight.where(sql_query, query: "%#{params[:query]}%")
-      @weights = Weight.search_by_value_and_created_at(params[:query])
+      # @weights = Weight.where('DATE(created_at) = ?', params[:query])
+      @weights = Weight.search_by_value_and_created_at(value: params[:query])
     else
       @weights = Weight.all
     end

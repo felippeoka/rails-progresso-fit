@@ -1,3 +1,4 @@
+//card show used in profiles(timeline) and index weight
 .card-show {
   overflow: hidden;
   background: rgb(255, 255, 255);
@@ -11,7 +12,8 @@
   }
 }
 
-.photo-card {
+//new weight card
+.photo-preview-weight {
   // display: grid;
   // grid-template-columns: 1fr 1fr 1fr;
   // grid-gap: 16px;
@@ -32,7 +34,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.card-body {
+.new-weight-card-body {
   background-color: $gray;
   color: white;
   box-shadow: 0px 1px 2px 0px rgba(0,255,255,0.7),
@@ -41,19 +43,20 @@
             2px 4px 12px 0px rgba(0,255,255,0.7);
 }
 
-.card-title {
+.new-weight-card-title {
   font-weight: bold;
 }
 
-.card-subtitle {
+.new-weight-card-subtitle {
   color: white;
   opacity: 0.8;
 }
 
+//show weight card
 .card-trip {
   overflow: hidden;
   background: black;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 500px;
   color: white;
   border-radius: 5px;
@@ -97,6 +100,12 @@
   width: 40px;
 }
 
+//card index weight (previously used in timeline)
+.card-index-weight {
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
 .photo-unleash {
   height: 400px;
   width: 500px;
@@ -108,14 +117,26 @@
   // justify-content: center;
   // align-items: center;
 }
+.img-index-carousel {
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+
 .card-text-posted {
   align-items: center;
-  background-color: $gray;
+  background-color: black;
   color: white;
   height: 100%;
   justify-content: center;
   flex-direction: column;
   padding: 20px 0;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: flex-end;
+  // position: relative;
 }
 
 .card-full-posted-right {
@@ -125,13 +146,19 @@
   border-radius: 10px 10px 0 0;
 }
 
-// .carousel-img {
-//   width: 50%;
-//   height: 400px;
-//   object-fit: cover;
-//   object-position: center;
-// }
+.card-text-posted h5 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
 
+.card-text-posted p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+//show de profiles(timeline)
 .card-product {
   overflow: hidden;
   height: 300px;
@@ -166,13 +193,7 @@
   padding: 16px;
 }
 
-.img-test {
-  height: 400px;
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
-}
-
+//progress timeline profiles
 .card-body-progress {
   background-color: $gray;
   color: white;

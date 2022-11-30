@@ -7,8 +7,7 @@
   <div class="split right">
     <div class="centered">
       <div class="d-flex justify-content-center">
-      <br>
-      <h2 class="h1-log mt-4 mb-4"><span style="color:white">LOG </span><span style="color:red">IN</span></h2>
+      <h2 class="h1-log mt-1 mb-4"><span style="color:white">LOG </span><span style="color:red">IN</span></h2>
     </div>
     <div class="d-flex justify-content-center">
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name),
@@ -23,7 +22,9 @@
                     required: false,
                     placeholder: '••••••',
                     input_html: { autocomplete: "current-password", class:"text-dark rounded-pill" } %>
-        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <div class="d-flex justify-content-center">
+        <%= f.input :remember_me, as: :boolean, class:"centered" if devise_mapping.rememberable? %>
+        </div>
       </div>
       <div class="form-actions d-grid gap-2">
         <%= f.button :submit, "Log in", class: "btn btn-outline-secondary text-white rounded-pill" %>
