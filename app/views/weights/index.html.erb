@@ -22,10 +22,12 @@
 
         <div class="text-center animate__animated animate__bounce">
           <h3>All Your Posts</h3>
-          <div class="d-flex align-items-center flex-column-reverse mt-3">
-            <% current_user.weights.each do |weight| %>
-              <%= render "profiles/card", weight: weight %>
-            <% end %>
+          <div class="row">
+              <% current_user.weights.each do |weight| %>
+                <div class="col-4 d-flex align-items-center flex-column-reverse mt-3">
+                    <%= render "profiles/card", weight: weight %>
+                </div>
+              <% end %>
           </div>
         </div>
 
