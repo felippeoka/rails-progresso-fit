@@ -95,7 +95,7 @@
   <ul class="list-group list-group-flush">
     <li class="list-group-item"><i class="fa-solid fa-dumbbell"></i> <%= current_user.weights.first.value %> kg</li>
     <li class="list-group-item"><i class="fa-solid fa-calendar-days"></i> <%= current_user.weights.first.created_at.strftime('%d/%b/%Y') %></li>
-    <%= button_to "Show", "weight_path(weight.first)", class: "btn-outline-red m-3"  %>
+    <%= button_to "Show", "weight_path(current_user.weights.first.id)", class: "btn-outline-red m-3"  %>
   </ul>
 
 </div>
