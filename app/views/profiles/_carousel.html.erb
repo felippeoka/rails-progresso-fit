@@ -2,12 +2,12 @@
   <div class="carousel-inner">
     <% if weight.photos.empty? %>
       <div data-upload-id="myFirstImage">
-        <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8Ym9keWJ1aWxkZXJ8fHx8fHwxNjY4ODY1NTEy&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=700" alt="" class="img-test">
+        <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8Ym9keWJ1aWxkZXJ8fHx8fHwxNjY4ODY1NTEy&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=700" alt="" class="img-index-carousel">
       </div>
     <% else %>
         <% weight.photos.each_with_index do |photo, index| %>
-          <div class="carousel-item <%= 'active' if index.zero? %> img-test">
-            <%= cl_image_tag photo.key, class: "img-test"  %>
+          <div class="carousel-item <%= 'active' if index.zero? %> img-index-carousel">
+            <%= cl_image_tag photo.key, class: "img-index-carousel"  %>
           </div>
         <% end %>
     <% end %>
