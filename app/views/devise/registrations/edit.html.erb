@@ -5,16 +5,16 @@
   <div class="d-flex justify-content-center">
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
-    <div class="form-inputs text-white">
-      <%= f.input :email, required: true, autofocus: true, input_html: { class: 'bg-white', class:"text-dark", class:"rounded-pill"  } %>
-      <%= f.input :first_name, required: true, autofocus: true, input_html: { class: 'bg-white', class:"text-dark", class:"rounded-pill" }  %>
-      <%= f.input :last_name, required: true, autofocus: true, input_html: { class: 'bg-white', class:"text-dark", class:"rounded-pill"  }  %>
-      <%= f.input :phone, required: true, autofocus: true, input_html: { class: 'bg-white', class:"text-dark", class:"rounded-pill"  }  %>
+    <div class="form-inputs text-center text-white">
+      <%= f.input :email, required: true, autofocus: true, input_html: { class:"text-center text-dark rounded-pill" } %>
+      <%= f.input :first_name, required: true, autofocus: true, input_html: { class:"text-dark text-center rounded-pill" }  %>
+      <%= f.input :last_name, required: true, autofocus: true, input_html: { class:"text-center text-dark rounded-pill" }  %>
+      <%= f.input :phone, required: true, autofocus: true, input_html: { class:"text-center text-dark rounded-pill" }  %>
       <%= f.input :birthday, :order => [:day, :month, :year], required: true, start_year: Date.today.year - 90,
-                              end_year: Date.today.year - 12, input_html: { class: 'bg-white', class:"text-dark", class:"rounded-pill"  }  %>
-      <%= f.input :height, label: "Height (centimeters)", required: true, autofocus: true, input_html: { min: '90', max: '230', class: 'bg-white', class:"text-dark", class:"rounded-pill"  }  %>
-      <%= f.input :gender, collection: User::GENDERS, required: true, autofocus: true, input_html: { class: 'bg-white', class:"text-dark", class:"rounded-pill"  }  %>
-      <%= f.input :photo, as: :file, input_html: { class: 'bg-white', class:"text-dark", class:"rounded-pill"  } %>
+                              end_year: Date.today.year - 12, input_html: { class:"text-center text-dark rounded-pill" }  %>
+      <%= f.input :height, label: "Height (centimeters)", required: true, autofocus: true, input_html: { min: '90', max: '230', class:"text-center text-dark rounded-pill" }  %>
+      <%= f.input :gender, collection: User::GENDERS, required: true, autofocus: true, input_html: { class:"text-center text-dark rounded-pill" }  %>
+      <%= f.input :photo, as: :file, input_html: { class:"text-center text-dark rounded-pill" } %>
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
       <% end %>
@@ -23,11 +23,12 @@
                   hint: "We need your current password to confirm your changes",
                   required: true,
                   input_html: { autocomplete: "current-password", class:"text-dark rounded-pill"  },
-                  hint_html: { style: "color: red" } %>
+                  hint_html: { style: "color: gray" } %>
       <%= f.input :password, label: "New Password",
                   hint: "leave it blank if you don't want to change it",
                   required: false,
-                  input_html: { autocomplete: "new-password", class:"text-dark rounded-pill"  } %>
+                  input_html: { autocomplete: "new-password", class:"text-dark rounded-pill"  },
+                  hint_html: { style: "color: gray" } %>
       <%= f.input :password_confirmation,
                   required: false,
                   input_html: { autocomplete: "new-password", class:"text-dark rounded-pill"  } %>
