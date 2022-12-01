@@ -13,7 +13,7 @@
                 </div>
                 <div class="linha-vertical"></div>
                 <div class="stat-subtext">Weight
-                  <li class="list-group"><%= current_user.weights.last&.value %>kg</li>
+                  <li class="list-group"><%= current_user.weights.last&.value %> kg</li>
                 </div>
                 <div class="linha-vertical"></div>
                 <div class="stat-subtext">Height
@@ -25,7 +25,7 @@
           </div>
 
         <div class="col-9 text-center">
-        <h3 class="">BMI: <%= current_user&.imc_calc unless current_user&.imc_calc.nil? %> - <%=  current_user&.imc_message unless !current_user&.imc_message.nil? %> Ideal weight: <%= current_user&.ideal_weight %>kg</h3>
+        <h3 class="">BMI: <%= current_user&.imc_calc unless current_user&.imc_calc.nil? %> - <%=  current_user&.imc_message unless current_user&.imc_message.nil? %> Ideal weight: <%= current_user&.ideal_weight %>kg</h3>
         <!--<h3><%=  current_user&.progress_from_min %></h3>
         <h3><%=  current_user&.progress_from_begin %></h3>!-->
         <br>
@@ -89,7 +89,7 @@
   <ul class="list-group list-group-flush">
     <li class="list-group-item font-blue"><i class="fa-solid fa-dumbbell"></i> <%= current_user.weights.first.value %> kg</li>
     <li class="list-group-item font-blue"><i class="fa-solid fa-calendar-days"></i> <%= current_user.weights.first.created_at.strftime('%d/%b/%Y') %></li>
-    <%= button_to "Show", "weight_path(current_user.weights.first.id)", class: "btn-outline-red m-3"  %>
+    <%= link_to "Show", weight_path(current_user.weights.first.id), class: "btn-outline-red m-3 text-decoration-none" %>
   </ul>
 
 </div>
@@ -120,7 +120,7 @@
   <ul class="list-group list-group-flush">
     <li class="list-group-item font-blue"><i class="fa-solid fa-dumbbell"></i> <%= current_user.weights.last.value %> kg</li>
     <li class="list-group-item font-blue"><i class="fa-solid fa-calendar-days"></i> <%= current_user.weights.last.created_at.strftime('%d/%b/%Y') %></li>
-    <%= button_to "Show", "weight_path(@weight.last)", class: "btn-outline-red m-3"  %>
+    <%= link_to "Show", weight_path(current_user.weights.last.id), class: "btn-outline-red m-3 text-decoration-none"  %>
   </ul>
   </div>
 
