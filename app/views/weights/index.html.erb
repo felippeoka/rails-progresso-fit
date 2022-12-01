@@ -1,6 +1,6 @@
 <div class="container">
 
-  <%= simple_form_for :search, url: weights_path, method: :get do |f| %>
+  <%= form_tag weights_path, method: :get do %>
         <div class="search-form-control form-group row">
           <%= text_field_tag :query,
                   params[:query],
@@ -19,15 +19,14 @@
     <div class="col-sm-10">
 
       <div class="card-show mt-3 d-flex justify-content-center">
-
         <div class="text-center animate__animated animate__bounce">
           <h3>All Your Posts</h3>
           <div class="row">
-              <% current_user.weights.each do |weight| %>
-                <div class="col-4 d-flex align-items-center flex-column-reverse mt-3">
-                    <%= render "profiles/card", weight: weight %>
-                </div>
-              <% end %>
+            <% @weights.each do |weight| %>
+              <div class="col-4 d-flex align-items-center flex-column-reverse mt-3">
+                <%= render "profiles/card", weight: weight %>
+              </div>
+            <% end %>
           </div>
         </div>
 
@@ -80,3 +79,4 @@
     </div>
   <% end %>
 </div>
+-->
