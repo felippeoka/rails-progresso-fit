@@ -41,5 +41,12 @@
     <%= link_to profiles_path, class: "text-decoration-none text-light px-4" do %>
       <i class="fa-solid fa-left-long mb-3"></i>
     <% end %>
+    <div class="dropdown">
+      <a class="fa-solid fa-ellipsis text-decoration-none text-light" href="#" data-bs-toggle="dropdown" aria-expanded="false"></a>
+
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="<% edit_weight_path(@weight) %>">Edit Post</a></li>
+      </ul>
+    </div>
   </div>
 </div>

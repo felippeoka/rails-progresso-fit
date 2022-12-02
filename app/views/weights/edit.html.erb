@@ -1,35 +1,28 @@
 <div class="container text-center mt-5">
-
-    <div class="mx-auto" style="width: 500px;">
-
-        <div class="new-weight-card-body rounded-4 border border-secondary">
-          <h5 class="new-weight-card-title mt-3">Keep track of your progress!</h5>
-          <h6 class="new-weight-card-subtitle mb-3">Submit your current weight</h6>
-          <div class="d-flex justify-content-center" data-controller="weight-image">
-            <p class="new-weight-card-text">
-              <%= simple_form_for @weight do |f| %>
-                <div class="row justify-content-center">
-                  <div class="d-flex col-sm-6"><p class="m-2">Weight(kg):</p><%= f.input :value, input_html: { class: "input-weight" }, label: false %></div>
-                </div>
-                  <%= f.input :photos, as: :file, input_html: { multiple: true, class: "input-photo" } %>
-                  <div class="custom-file-container" data-upload-id="myFirstImage">
-                    <div class="photo-preview-weight mb-1 mt-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8Ym9keWJ1aWxkZXJ8fHx8fHwxNjY4ODY1NTEy&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=700)"></div>
-                  </div>
-                <%= f.submit "Deixe de ser frango!", class: "btn btn-frango-weight mt-3 mb-4" %>
-                <div class="position-relative">
-                  <div class="position-absolute bottom-0 start-0 p-4 px-1">
-                    <%= link_to profiles_path, class: "text-decoration-none text-light" do %>
-                      <i class="fa-solid fa-left-long"></i>
-                    <% end %>
-                  </div>
-                </div>
-              <% end %>
-            </p>
+  <div class="mx-auto" style="width: 500px;">
+    <div class="new-weight-card-body rounded-4 border border-secondary">
+      <h3 class="new-weight-card-title mt-4 text-red-pf">Keep track of your progress!</h3>
+        <div class="d-flex justify-content-center" data-controller="weight-image">
+          <p class="new-weight-card-text">
+          <%= simple_form_for @weight do |f| %>
+          <div class="row justify-content-center" style= "text-align: -webkit-center;">
+            <div class="col-sm-12"><p class="m-2">Submit your current weight (kg)
+              <%= f.input :value, input_html: { class: "input-weight" }, label: false %></div>
+            </div>
+          <%= f.input :photos, as: :file, input_html: { multiple: true, class: "input-photo" } %>
+          <div class="custom-file-container" data-upload-id="myFirstImage">
+            <div class="photo-preview-weight mb-1 mt-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8Ym9keWJ1aWxkZXJ8fHx8fHwxNjY4ODY1NTEy&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=700)"></div>
           </div>
-          <%# <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a> %>
+          <%= f.submit "No pain, no gain", class: "btn btn-outline-red btn-nopain mt-3 mb-4" %>
+            <div class="position-relative">
+              <div class="position-absolute bottom-0 start-0 p-4 px-1">
+                <%= link_to profiles_path, class: "text-decoration-none text-light" do %>
+                  <i class="fa-solid fa-left-long"></i>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
         </div>
-
     </div>
-
+  </div>
 </div>
