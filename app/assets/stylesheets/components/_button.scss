@@ -16,3 +16,19 @@
   color: white !important;
   font-weight: bold;
 }
+.btn-outline-gray{
+  border: 1px solid #263238;
+  border-radius: 50px;
+  font-weight: normal;
+  color: #4A4A4A;
+  transition: opacity 0.3s ease;
+  width: 55%;
+  height: 38px;
+  background-color: $background-gray;
+}
+.btn-outline-gray:hover {
+  opacity: 1;
+  border: 1px solid #4A4A4A;
+  background-color: #4A4A4A;
+  color: white !important;
+}

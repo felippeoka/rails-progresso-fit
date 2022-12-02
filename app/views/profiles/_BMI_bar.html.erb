@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
 
-    <div class="col">
+    <div class="col-xs-6 col">
     <% if current_user.imc_calc <= 16 %>
     <%= image_tag "bmi_cropped/0 - 16.jpg", class: "img-bmi shadow" %>
     <% else %>
@@ -9,7 +9,7 @@
     <% end %>
     </div>
 
-    <div class="col">
+    <div class="col-xs-6 col">
     <% if (current_user.imc_calc > 16) && (current_user.imc_calc <= 17) %>
     <%= image_tag "bmi_cropped/16 - 17.jpg", class: "img-bmi shadow" %>
     <% else %>
@@ -17,7 +17,7 @@
     <% end %>
     </div>
 
-    <div class="col">
+    <div class="col-xs-6 col">
     <% if (current_user.imc_calc > 17) && (current_user.imc_calc <= 18.5) %>
     <%= image_tag "bmi_cropped/17-18.5.jpg", class: "img-bmi shadow" %>
     <% else %>
@@ -25,7 +25,7 @@
     <% end %>
     </div>
 
-    <div class="col">
+    <div class="col-xs-6 col">
     <% if (current_user.imc_calc > 18.5) && (current_user.imc_calc <= 25) %>
     <%= image_tag "bmi_cropped/18.5 - 25.jpg", class: "img-bmi shadow-lg" %>
     <% else %>
@@ -33,7 +33,7 @@
     <% end %>
     </div>
 
-    <div class="col">
+    <div class="col-xs-6 col">
     <% if (current_user.imc_calc > 25) && (current_user.imc_calc <= 30) %>
     <%= image_tag "bmi_cropped/25 - 30.jpg", class: "img-bmi shadow-lg" %>
     <% else %>
@@ -41,7 +41,7 @@
     <% end %>
     </div>
 
-    <div class="col">
+    <div class="col-xs-6 col">
     <% if (current_user.imc_calc > 30) && (current_user.imc_calc <= 35) %>
     <%= image_tag "bmi_cropped/30 - 35.jpg", class: "img-bmi shadow" %>
     <% else %>
@@ -49,7 +49,7 @@
     <% end %>
     </div>
 
-    <div class="col">
+    <div class="col-xs-6 col">
     <% if (current_user.imc_calc > 35) && (current_user.imc_calc <= 40) %>
     <%= image_tag "bmi_cropped/35 - 40.jpg", class: "img-bmi shadow" %>
     <% else %>
@@ -57,7 +57,7 @@
     <% end %>
     </div>
 
-    <div class="col">
+    <div class="col-xs-6 col">
     <% if current_user.imc_calc > 40 %>
     <%= image_tag "bmi_cropped/40.jpg", class: "img-bmi shadow" %>
     <% else %>
