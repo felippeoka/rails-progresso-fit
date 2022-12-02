@@ -9,14 +9,11 @@
       <div class="card-text-posted d-flex card-full-posted-right">
         <h5 style="text-align:left; width: 95%;">Weight: <%= weight.value %></h5>
         <div class="row" style="width:100%;">
-        <div class="col-10" style="text-align:left;">
+        <div class="col-8" style="text-align:left;">
           <p><strong>Date: <%= weight.created_at.strftime("%d/%b/%Y") %></strong></p>
         </div>
-          <%# <h3> <%= link_to "Show", weight_path(weight), class: "btn btn-danger" %> </h3>
-          <div class="col-2" style="text-align:right;">
-            <h6 class="card-trip-pricing"><%= link_to weight_path(weight), data: {turbo_method: :delete, turbo_confirm: "Are you sure that you want to delete the item#{weight.id}?"}, class: "text-decoration-none text-secondary" do %>
-              <i class="fa-solid fa-trash link-secondary"></i>
-            <% end %></h6>
+          <div class="col-4" style="text-align:right;">
+            <h6><%= link_to "Show", weight_path(weight), class: "btn btn-danger" %></h6>
           </div>
         </div>
       </div>

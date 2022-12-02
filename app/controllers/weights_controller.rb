@@ -1,16 +1,27 @@
 class WeightsController < ApplicationController
+  before_action :set_weight, only: %i[show edit update destroy]
 
   def index
-    if params.present?
+    if params[:query].present?
+      # @weights = current_user.weights.search_by_value_and_created_at(params[:query])
+      date = Date.parse(params[:query])
+      @weights = current_user.weights.where(created_at: date.all_day)
+    else
+      @weights = current_user.weights
+    end
+  end
+
+  # def index
+  #   if params.present?
       # @weights = Weight.where(:created_at ==  params[:search][:created_at])
       # sql_query = "value ILIKE :query OR created_at ILIKE :query"
       # @weight = Weight.where(sql_query, query: "%#{params[:query]}%")
       # @weights = Weight.where('DATE(created_at) = ?', params[:query])
-      @weights = Weight.search_by_value_and_created_at(value: params[:query])
-    else
-      @weights = Weight.all
-    end
-  end
+      # @weights = Weight.search_by_value_and_created_at(value: params[:query])
+  #   else
+  #     @weights = Weight.all
+  #   end
+  # end
 
   def new
     @weight = Weight.new
@@ -27,11 +38,20 @@ class WeightsController < ApplicationController
   end
 
   def show
-    @weight = Weight.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @weight.update(weight_params)
+      redirect_to weight_path(@weight)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
-    @weight = Weight.find(params[:id])
     @weight.destroy
     redirect_to profiles_path, status: :see_other
   end
@@ -40,5 +60,9 @@ class WeightsController < ApplicationController
 
   def weight_params
     params.require(:weight).permit(:value, photos: [])
+  end
+
+  def set_weight
+    @weight = Weight.find(params[:id])
   end
 end
