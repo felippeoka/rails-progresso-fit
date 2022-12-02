@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resource :profiles, only: %i[show]
-  resources :weights, only: %i[index new create show destroy]
+  resources :weights, only: %i[index new create show edit update destroy]
 end
