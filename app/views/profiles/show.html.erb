@@ -107,10 +107,14 @@
                 </div>
                 <div id="carouselExampleInterval<%= current_user.weights.last.id %>" class="carousel slide" data-bs-ride="carousel">
                   <div class="carousel-inner rounded">
-                    <% current_user.weights.last.photos.each_with_index do |photo, index| %>
-                      <div class="carousel-item <%= 'active' if index.zero? %>">
-                        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, style:"border-radius:5px;", class:"d-block w-100" %>
-                      </div>
+                    <% if current_user.weights.last.photos.attached? %>
+                      <% current_user.weights.last.photos.each_with_index do |photo, index| %>
+                        <div class="carousel-item <%= 'active' if index.zero? %>">
+                          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, style:"border-radius:5px;", class:"d-block w-100" %>
+                        </div>
+                      <% end %>
+                    <% else %>
+                      <div class="photo-unleash-currently d-block w-100" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8Ym9keWJ1aWxkZXJ8fHx8fHwxNjY4ODY1NTEy&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=700)"></div>
                     <% end %>
                   </div>
                   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval<%= current_user.weights.last.id %>" data-bs-slide="prev">
