@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-md navbar-dark bg-black navbar-lewagon mt-3 mb-3">
-  <div class="container-nav">
+  <div class="container-nav-home">
 
     <% if user_signed_in? %>
       <%= link_to profiles_path, class: "navbar-brand" do %>
@@ -16,7 +16,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse container-nav navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse container-nav-home navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <% if user_signed_in? %>
           <li class="name foo"><%= "#{current_user.first_name}  #{current_user.last_name}" %>
