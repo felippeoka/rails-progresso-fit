@@ -24,26 +24,12 @@
                   <li class="list-group"><%= (current_user.height.nil? ? 0 : (current_user.height))/100 %>m</li>
                 </div>
               </div>
-              <div class="linha-vertical"></div>
-              <div class="stat-subtext">Weight
-                <li class="list-group"><%= current_user.weights.last&.value %> kg</li>
-              </div>
-              <div class="linha-vertical"></div>
-              <div class="stat-subtext">Height
-                <li class="list-group"><%= (current_user.height.nil? ? 0 : (current_user.height))/100 %>m</li>
-              </div>
-              <div class="linha-vertical"></div>
-              <div class="stat-subtext">Weight
-                <li class="list-group"><%= current_user.weights.last&.value %> kg</li>
-              </div>
-              <div class="linha-vertical"></div>
-              <div class="stat-subtext">Height
-                <li class="list-group"><%= (current_user.height.nil? ? 0 : (current_user.height))/100 %>m</li>
-              </div>
             </ul>
+            <div>
             <%= link_to "Post New Weight", new_weight_path, class: "btn btn-outline-gray" %>
+            </div>
           </div>
-
+<%# <h3>TESSST</h3> %>
         <div class="col-md-9 col-xs-12 text-center">
         <h3>Ideal weight: <%= current_user&.ideal_weight.to_i %>kg</h3>
         <h3 class="">BMI: <%= current_user&.imc_calc unless current_user&.imc_calc.nil? %> (<%=  current_user&.imc_message unless current_user&.imc_message.nil? %>)</h3>
