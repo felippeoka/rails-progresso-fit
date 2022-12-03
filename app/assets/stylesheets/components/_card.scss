@@ -119,14 +119,6 @@
   border-radius: 20px;
 }
 
-.weight-icon {
-  color: red
-}
-
-.date-icon {
-  color: #bbbbbb;
-}
-
 .photo-unleash {
   height: 400px;
   width: 500px;
@@ -252,10 +244,6 @@
   }
 }
 
-.fa-dumbbell {
-  color: $red;
-}
-
-.fa-calendar-days {
+.fa-dumbbell, .fa-calendar-days {
   color: $red;
 }
