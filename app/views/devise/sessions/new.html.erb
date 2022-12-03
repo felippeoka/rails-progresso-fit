@@ -17,11 +17,11 @@
                     required: false,
                     autofocus: true,
                     placeholder: 'user@domain.com',
-                    input_html: { autocomplete: "email", class:"text-dark rounded-pill" } %>
+                    input_html: { autocomplete: "email", class:"text-dark text-center rounded-pill" } %>
         <%= f.input :password,
                     required: false,
                     placeholder: '••••••',
-                    input_html: { autocomplete: "current-password", class:"text-dark rounded-pill" } %>
+                    input_html: { autocomplete: "current-password", class:"text-dark text-center rounded-pill" } %>
         <div class="d-flex justify-content-center">
         <%= f.input :remember_me, as: :boolean, class:"centered" if devise_mapping.rememberable? %>
         </div>
