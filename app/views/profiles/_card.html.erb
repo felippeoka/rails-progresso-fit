@@ -1,21 +1,34 @@
-<div class="card-index-weight mb-3 animate__animated animate__bounce" style="max-width: 540px; border-radius:5px; border: transparent;">
-  <div class="row g-0">
-    <div class="col-12 card-full-posted-left">
+<div class="card-index-weight mb-3" style="max-width: 540px; border-radius:5px; border: transparent;">
+  <div class="d-flex flex-column g-0">
+
+    <div class="w-100 card-full-posted-left">
       <%= render "profiles/carousel", weight: weight %>
     </div>
-    <div class="col-12 card-full-posted-right">
-      <div class="card-text-posted d-flex card-full-posted-right">
-        <h5 style="text-align:left; width: 95%;"><%= weight.value.to_i %> kg</h5>
-        <div class="row" style="width:100%;">
-          <div class="col-8" style="text-align:left;">
-            <p><strong><%= weight.created_at.strftime("%d/%b/%Y") %></strong></p>
-          </div>
-          <div class="col-4" style="text-align:right;">
-            <h6><%= link_to "Show", weight_path(weight), class: "btn btn-danger" %></h6>
-          </div>
+
+    <%= link_to weight_path(weight), class:"text-decoration-none" do %>
+
+      <div class="w-100 card-full-posted-right">
+        <div class="card-text-posted d-flex card-full-posted-right">
+        
+          <h3 class="text-decoration-none"><i class="fa-solid fa-dumbbell"></i>  <%= weight.value %></h3>
+          
+
+            <div>
+              <p><strong><i class="fa-solid fa-calendar-days"></i>  <%= weight.created_at.strftime("%d/%b/%Y") %></strong></p>
+            </div>
+
+            <!--
+            <div>
+              <h6><%= link_to "Show", weight_path(weight), class: "btn btn-danger" %></h6>
+            </div>
+            -->
+
+
         </div>
-      </div>
+    <% end %>
+
     </div>
+    
   </div>
 </div>
 <!--
