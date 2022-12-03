@@ -4,7 +4,11 @@
       <div class="card-show mt-3 d-flex justify-content-between">
         <div class="text-center fixed-sidebar-container row">
           <div class="justify-content-center">
-            <%= cl_image_tag(current_user.photo.key, width: 60, height: 60, class: "profile-pic shadow", 'aria-haspopup': true, 'aria-expanded': false) %>
+            <% if current_user.photo.key.nil? %>
+              <%= image_tag "icon.jpg", width: 60, height: 60, class: "profile-pic shadow", 'aria-haspopup': true, 'aria-expanded': false %>
+            <% else %>
+              <%= cl_image_tag(current_user.photo.key, width: 60, height: 60, class: "profile-pic shadow", 'aria-haspopup': true, 'aria-expanded': false) %>
+            <% end %>
           </div>
           <div class="info-color d-flex justify-content-center">
             <ul class="list-group list-group-horizontal">

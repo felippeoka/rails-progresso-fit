@@ -18,24 +18,84 @@
 
     <div class="col-sm-10">
 
-      <div class="card-show mt-3 d-flex justify-content-center">
-        <div class="text-center animate__animated animate__bounce">
-          <h3>All Your Posts</h3>
-          <div class="row">
-            <% @weights.each do |weight| %>
-              <div class="col-4 d-flex align-items-center flex-column-reverse mt-3">
-                <%= render "profiles/card", weight: weight %>
-              </div>
-            <% end %>
+      <% if @weights.count == 1 %>
+        <div class="card-show mt-3 d-flex justify-content-center">
+          <div class="text-center animate__animated animate__bounce">
+            <h3>Your Post</h3>
+            <div class="row" style="justify-content: center;">
+              <% @weights.reverse.each do |weight| %>
+                <div class="col-10 d-flex align-items-center mt-3">
+                  <%# ----------------------------------- %>
+                  <div class="card-index-weight mb-3 animate__animated animate__bounce" style="max-width: 540px; border-radius:5px; border: transparent;">
+                    <div class="row g-0">
+                      <div class="col-12 card-full-posted-left">
+                        <%# ----------------------------------- %>
+                        <div id="carouselExampleIndicators<%= weight.id %>" class="carousel slide" data-bs-ride="true">
+                          <div class="carousel-inner">
+                            <% if weight.photos.empty? %>
+                              <div data-upload-id="myFirstImage">
+                                <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=600&ixid=MnwxfDB8MXxyYW5kb218MHx8Ym9keWJ1aWxkZXJ8fHx8fHwxNjY4ODY1NTEy&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=700" alt="" class="img-index-carousel">
+                              </div>
+                            <% else %>
+                                <% weight.photos.each_with_index do |photo, index| %>
+                                  <div class="carousel-item <%= 'active' if index.zero? %> img-index-carousel">
+                                    <%= cl_image_tag photo.key, class: "img-index-carousel"  %>
+                                  </div>
+                                <% end %>
+                            <% end %>
+                          </div>
+
+                          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators<%= weight.id %>" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                          </button>
+                          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators<%= weight.id %>" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                          </button>
+                        </div>
+
+                        <%# ----------------------------------- %>
+                      </div>
+                      <div class="col-12 card-full-posted-right">
+                        <div class="card-text-posted d-flex card-full-posted-right">
+                          <h5 style="text-align:left; width: 95%;"><%= weight.value.to_i %> kg</h5>
+                          <div class="row" style="width:100%;">
+                          <div class="col-8" style="text-align:left;">
+                            <p><strong>
+                            <%= weight.created_at.strftime("%d/%b/%Y") %></strong></p>
+                          </div>
+                            <div class="col-4" style="text-align:right;">
+                              <h6><%= link_to "Show", weight_path(weight), class: "btn btn-danger" %></h6>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <%# ----------------------------------- %>
+                </div>
+              <% end %>
+            </div>
           </div>
         </div>
-
-      </div>
-
+      <% else %>
+        <div class="card-show mt-3 d-flex justify-content-center">
+          <div class="text-center animate__animated animate__bounce">
+            <h3>All Your Posts</h3>
+            <div class="row">
+              <% @weights.reverse.each do |weight| %>
+                <div class="col-4 d-flex align-items-center mt-3">
+                  <%= render "profiles/card", weight: weight %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
-
   </div>
-
 </div>
 <!--
 <div class="container">

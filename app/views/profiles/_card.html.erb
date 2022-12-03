@@ -7,10 +7,10 @@
     </div>
     <div class="col-12 card-full-posted-right">
       <div class="card-text-posted d-flex card-full-posted-right">
-        <h5 style="text-align:left; width: 95%;">Weight: <%= weight.value %></h5>
+        <h5 style="text-align:left; width: 95%;"><%= weight.value.to_i %> kg</h5>
         <div class="row" style="width:100%;">
         <div class="col-8" style="text-align:left;">
-          <p><strong>Date: <%= weight.created_at.strftime("%d/%b/%Y") %></strong></p>
+          <p><strong><%= weight.created_at.strftime("%d/%b/%Y") %></strong></p>
         </div>
           <div class="col-4" style="text-align:right;">
             <h6><%= link_to "Show", weight_path(weight), class: "btn btn-danger" %></h6>
@@ -22,7 +22,7 @@
 </div>
 
 <!--
- Resolução do Roberto
+Resolução do Roberto
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
   <div class="carousel-inner">
     <% current_user.weights.map { |weight| weight.photos }.flatten.each_with_index do | photo, index | %>
