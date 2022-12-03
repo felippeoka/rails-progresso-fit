@@ -18,7 +18,7 @@
         <div class="card-show mt-3 d-flex justify-content-center">
           <div class="text-center">
             <h3>Your Post</h3>
-            <div class="row" style="justify-content: center;">
+            <div class="row animate__animated animate__fadeIn" style="justify-content: center;">
               <% @weights.reverse.each do |weight| %>
                 <div class="col-10 d-flex align-items-center mt-3">
                   <%# ----------------------------------- %>
@@ -72,9 +72,9 @@
       </div>
     <% else %>
       <div class="card-show mt-3 d-flex justify-content-center">
-        <div class="text-center animate__animated animate__bounce">
+        <div class="text-center">
           <h3>All Your Posts</h3>
-          <div class="row">
+          <div class="row animate__animated animate__fadeIn">
             <% @weights.order(created_at: :desc).each do |weight| %>
               <div class="col-sm-12 col-md-4 col-lg-3 d-flex align-items-center mt-3">
                 <%= render "profiles/card", weight: weight %>
