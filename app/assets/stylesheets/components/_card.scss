@@ -65,10 +65,12 @@
   width: 500px;
   color: white;
   border-radius: 5px;
-  box-shadow: 0px 1px 2px 0px rgba(0,255,255,0.7),
-            1px 2px 2px 0px rgba(0,255,255,0.7),
-            2px 4px 4px 0px rgba(0,255,255,0.7),
-            2px 4px 12px 0px rgba(0,255,255,0.7);
+  // box-shadow: -2px 1px 7px 0px $background-gray,
+  //           1px 2px 2px 0px $background-gray,
+  //           2px 4px 4px 0px $background-gray,
+  //           2px 4px 8px 0px $background-gray;
+  // border-width: 5px;
+  // border-color: #bbbbbb;
 }
 
 .card-trip > img {
@@ -78,38 +80,51 @@
 }
 
 .card-trip h2 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   margin: 0;
 }
 
 .card-trip p {
-  font-size: 12px;
+  font-size: 15px;
   opacity: .7;
   margin: 0;
 }
 
 
 .card-trip .card-trip-infos {
-  padding: 16px;
+  padding: 16px 16px 10px 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  position: relative;
 }
 
-.card-trip-infos .card-trip-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
-}
+// .card-trip-infos .card-trip-user {
+//   position: absolute;
+//   right: 16px;
+//   top: -20px;
+//   width: 40px;
+// }
 
 //card index weight (previously used in timeline)
+
 .card-index-weight {
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   // border-radius: 10px;
+}
+
+.icon-edit {
+  background-color: black;
+  border-radius: 20px;
+}
+
+.weight-icon {
+  color: red
+}
+
+.date-icon {
+  color: #bbbbbb;
 }
 
 .photo-unleash {
@@ -160,9 +175,9 @@
   }
 }
 
-.card-full-posted-right {
-  // border-radius: 0 0 10px 10px;
-}
+// .card-full-posted-right {
+//   // border-radius: 0 0 10px 10px;
+// }
 .card-full-posted-left {
   border-radius: 10px 10px 0 0;
 }
@@ -224,6 +239,7 @@
   border-width: 1px;
   width: 100%;
   margin-top: 2%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 
   li {
     background-color: $background-gray;
