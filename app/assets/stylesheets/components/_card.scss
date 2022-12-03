@@ -65,10 +65,12 @@
   width: 500px;
   color: white;
   border-radius: 5px;
-  box-shadow: -2px 1px 7px 0px $background-gray,
-            1px 2px 2px 0px $background-gray,
-            2px 4px 4px 0px $background-gray,
-            2px 4px 8px 0px $background-gray;
+  // box-shadow: -2px 1px 7px 0px $background-gray,
+  //           1px 2px 2px 0px $background-gray,
+  //           2px 4px 4px 0px $background-gray,
+  //           2px 4px 8px 0px $background-gray;
+  // border-width: 5px;
+  // border-color: #bbbbbb;
 }
 
 .card-trip > img {
@@ -93,9 +95,8 @@
 .card-trip .card-trip-infos {
   padding: 16px 16px 10px 16px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-end;
-  position: relative;
 }
 
 // .card-trip-infos .card-trip-user {
@@ -106,6 +107,7 @@
 // }
 
 //card index weight (previously used in timeline)
+
 .card-index-weight {
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -115,22 +117,13 @@
 .icon-edit {
   background-color: black;
   border-radius: 20px;
-  position: absolute;
-  bottom: 5px;
-  right: 245px;
 }
 
 .weight-icon {
-  position: absolute;
-  top: 20px;
-  right: 205px;
   color: red
 }
 
 .date-icon {
-  position: absolute;
-  top: 40px;
-  right: 195px;
   color: #bbbbbb;
 }
 

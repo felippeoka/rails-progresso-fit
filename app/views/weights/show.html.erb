@@ -1,6 +1,6 @@
 <div class="container d-flex justify-content-center">
 
-  <div class="card-trip mt-3">
+  <div class="card-trip mt-3 border border-light border-opacity-75">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
       <%# <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -28,13 +28,14 @@
     </div>
 
     <div class="card-trip-infos">
-      <div>
-        <h2 class="d-flex justify-content-center"><strong><%= @weight.value %>kg</strong></h2><i class="weight-icon fa-solid fa-dumbbell"></i>
-        <p><strong><%= @weight.created_at.strftime("%d/%b/%Y") %></strong></p><i class="date-icon fa-solid fa-calendar-days"></i>
+    <div class="mx-3"></div>
+      <div class="d-flex flex-column align-items-center">
+        <h2><i class="weight-icon fa-solid fa-dumbbell"></i>  <strong><%= @weight.value %>kg</strong></h2>
+        <p><i class="date-icon fa-solid fa-calendar-days"></i>  <strong><%= @weight.created_at.strftime("%d/%b/%Y") %></strong></p>
       </div>
       <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
-      <div class="edit-icon px-3">
-        <div class="dropdown">
+      <div class="edit-icon">
+        <div class="dropdown d-flex justify-content-end">
           <button class="icon-edit fa-solid fa-ellipsis text-decoration-none text-light" href="#" data-bs-toggle="dropdown" aria-expanded="false"></button>
 
           <ul class="dropdown-menu text-center">
