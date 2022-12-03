@@ -29,23 +29,21 @@
 
     <div class="card-trip-infos">
       <div>
-        <h2><strong><%= @weight.value %>kg</strong></h2>
-        <p><strong>Uploaded at <%= @weight.created_at.strftime("%d/%b/%Y") %></strong></p>
+        <h2 class="d-flex justify-content-center"><strong><%= @weight.value %>kg</strong></h2><i class="weight-icon fa-solid fa-dumbbell"></i>
+        <p><strong><%= @weight.created_at.strftime("%d/%b/%Y") %></strong></p><i class="date-icon fa-solid fa-calendar-days"></i>
       </div>
-      <h2 class="card-trip-pricing"><%= link_to weight_path(@weight), data: {turbo_method: :delete, turbo_confirm: "Are you sure that you want to delete the item#{@weight.id}?"}, class: "text-decoration-none text-secondary" do %>
-        <i class="fa-solid fa-trash opacity-75 link-secondary"></i>
-      <% end %></h2>
       <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
-    </div>
       <div class="edit-icon px-3">
         <div class="dropdown">
-          <a class="fa-solid fa-ellipsis text-decoration-none text-light" href="#" data-bs-toggle="dropdown" aria-expanded="false"></a>
+          <button class="icon-edit fa-solid fa-ellipsis text-decoration-none text-light" href="#" data-bs-toggle="dropdown" aria-expanded="false"></button>
 
-          <ul class="dropdown-menu rounded-pill text-center bg-secondary">
-            <li><%= link_to "Edit This Post", edit_weight_path(@weight), class: "dropdown-item rounded-pill text-white bg-transparent" %></li>
+          <ul class="dropdown-menu text-center">
+            <li><%= link_to "Edit Post", edit_weight_path(@weight), class: "dropdown-item" %></li>
+            <li><%= link_to "Delete Post", weight_path(@weight), data: {turbo_method: :delete, turbo_confirm: "Are you sure that you want to delete the item#{@weight.id}?"}, class: "dropdown-item"%>
           </ul>
         </div>
       </div>
+    </div>
 
     <%# <%= link_to profiles_path, class: "text-decoration-none text-light px-4" do %>
       <%# <i class="fa-solid fa-left-long mb-3"></i> %>

@@ -2,7 +2,7 @@
 
   <%= form_tag weights_path, method: :get do %>
         <div class="search-form-control form-group row">
-          <%= text_field_tag :query,
+          <%= date_field_tag :query,
                   params[:query],
                   class: "form-control",
                   placeholder: "Find your previous weight",
