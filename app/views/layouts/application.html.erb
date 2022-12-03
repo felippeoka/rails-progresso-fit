@@ -25,10 +25,19 @@
   </head>
 
   <body>
-    <% unless action_name == "registration/new" && "sessions/new" %>
-    <%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
+    <% unless (action_name == "registration/new" && "sessions/new" && "weights/index") || (controller_name == "weights" || "profiles") %>
+      <%= render "shared/navbar" %>
+      <%= render "shared/flashes" %>
     <% end %>
+
+    <% if (controller_name == "weights" || controller_name == "profiles") %>
+      <%= render "shared/navbar_weights" %>
+    <% end %>
+
+    <% if controller_name == "pages" || (action_name == "edit" && controller_name == "registrations") %>
+      <%= render "shared/navbar" %>
+    <% end %>
+
     <%= yield %>
   </body>
   <%# <% unless action_name == "registration/new" && "sessions/new" %>

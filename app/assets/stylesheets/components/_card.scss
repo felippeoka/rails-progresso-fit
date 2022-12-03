@@ -93,7 +93,7 @@
 
 
 .card-trip .card-trip-infos {
-  padding: 16px 16px 10px 16px;
+  padding: 16px 16px 16px 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -112,6 +112,7 @@
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   // border-radius: 10px;
+  width: 100%;
 }
 
 .icon-edit {
@@ -150,7 +151,7 @@
   // justify-content: space-between;
   // align-items: flex-end;
   // position: relative;
-  
+
   h3 {
     font-size: 16px;
     font-weight: bold;
@@ -246,4 +247,16 @@
 
 .fa-dumbbell, .fa-calendar-days {
   color: $red;
+}
+
+.photo-unleash-currently {
+  height: 300px;
+  width: 400px;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  margin: auto;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
 }
