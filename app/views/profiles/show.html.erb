@@ -24,22 +24,6 @@
                   <li class="list-group"><%= (current_user.height.nil? ? 0 : (current_user.height))/100 %>m</li>
                 </div>
               </div>
-              <div class="linha-vertical"></div>
-              <div class="stat-subtext">Weight
-                <li class="list-group"><%= current_user.weights.last&.value %> kg</li>
-              </div>
-              <div class="linha-vertical"></div>
-              <div class="stat-subtext">Height
-                <li class="list-group"><%= (current_user.height.nil? ? 0 : (current_user.height))/100 %>m</li>
-              </div>
-              <div class="linha-vertical"></div>
-              <div class="stat-subtext">Weight
-                <li class="list-group"><%= current_user.weights.last&.value %> kg</li>
-              </div>
-              <div class="linha-vertical"></div>
-              <div class="stat-subtext">Height
-                <li class="list-group"><%= (current_user.height.nil? ? 0 : (current_user.height))/100 %>m</li>
-              </div>
             </ul>
             <%= link_to "Post New Weight", new_weight_path, class: "btn btn-outline-gray" %>
           </div>
