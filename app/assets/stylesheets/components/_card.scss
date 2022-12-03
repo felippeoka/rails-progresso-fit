@@ -158,6 +158,21 @@
   // justify-content: space-between;
   // align-items: flex-end;
   // position: relative;
+  
+  h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    color: $background-gray;
+    text-decoration: none;
+    font-size: large;
+  }
+
+  p {
+    font-size: 12px;
+    opacity: .7;
+    margin: 0;
+  }
 }
 
 // .card-full-posted-right {
@@ -165,18 +180,6 @@
 // }
 .card-full-posted-left {
   border-radius: 10px 10px 0 0;
-}
-
-.card-text-posted h5 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-text-posted p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
 }
 
 //show de profiles(timeline)
@@ -238,14 +241,6 @@
   margin-top: 2%;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 
-  .fa-dumbbell {
-    color: $red;
-  }
-
-  .fa-calendar-days {
-    color: $red;
-  }
-
   li {
     background-color: $background-gray;
   }
@@ -255,4 +250,12 @@
   .card-progress {
     width: 40%;
   }
+}
+
+.fa-dumbbell {
+  color: $red;
+}
+
+.fa-calendar-days {
+  color: $red;
 }
