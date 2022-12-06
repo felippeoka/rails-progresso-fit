@@ -22,6 +22,11 @@ class WeightsController < ApplicationController
   #     @weights = Weight.all
   #   end
   # end
+  def email_notification
+    if User.weights.last&.value.where("created_at >= ?", 1.week.ago.utc)
+      EmailNotificationMailer.with(weight: @weight).post_new_weight.deliver_later
+    end
+  end
 
   def new
     @weight = Weight.new
