@@ -14,6 +14,14 @@ legend ~ div.form-check:first-of-type {
   border-radius: 50px;
 }
 
+.container-input-weight{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .input-photo {
   border-radius: 50px;
 }
