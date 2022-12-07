@@ -20,16 +20,15 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />        
+    />
 
   </head>
 
   <body>
     <% unless (action_name == "registration/new" && "sessions/new" && "weights/index") || (controller_name == "weights" || "profiles") %>
       <%= render "shared/navbar" %>
-      <%= render "shared/flashes" %>
     <% end %>
-
+    <%= render "shared/flashes" %>
     <% if (controller_name == "weights" || controller_name == "profiles") %>
       <%= render "shared/navbar_weights" %>
     <% end %>
