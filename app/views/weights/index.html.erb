@@ -75,9 +75,9 @@
         <div class="text-center">
           <h3>All Your Posts</h3>
           <div class="row animate__animated animate__fadeIn">
-            <% @weights.order(created_at: :desc).each do |weight| %>
+            <% @weights.order(created_at: :desc).each_with_index do |weight, index| %>
               <div class="col-sm-12 col-md-4 col-lg-3 d-flex align-items-center mt-3">
-                <%= render "profiles/card", weight: weight %>
+                <%= render(partial:"profiles/card", locals: { weight: weight, index: index }) %>
               </div>
             <% end %>
           </div>
