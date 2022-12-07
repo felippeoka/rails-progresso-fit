@@ -16,8 +16,8 @@
         </button>
         <% if @weight.photos.attached? %>
           <% @weight.photos.each_with_index do |photo, index| %>
-            <div class="carousel-item <%= 'active' if index.zero? %>">
-              <%= cl_image_tag photo.key, height: 400, width: 500, crop: :fill %>
+            <div class="carousel-item resize-center <%= 'active' if index.zero? %>">
+              <%= cl_image_tag photo.key, class: :resize, crop: :pad, style:"border-radius:5px;" %>
             </div>
           <% end %>
         <% else %>
