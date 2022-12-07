@@ -28,7 +28,6 @@
             <%= link_to "Post New Weight", new_weight_path, class: "btn btn-outline-gray mb-2" %>
             </div>
           </div>
-<<<<<<< HEAD
         <div class="col-sm-12 col-md-9 text-center">
           <h3>Ideal weight: <%= current_user&.ideal_weight.to_i %>kg</h3>
           <h3 class="">BMI: <%= current_user&.imc_calc unless current_user&.imc_calc.nil? %> (<%=  current_user&.imc_message unless current_user&.imc_message.nil? %>)</h3>
@@ -41,11 +40,6 @@
             <h3 class="">BMI: <%= current_user&.imc_calc unless current_user&.imc_calc.nil? %> - <%=  current_user&.imc_message unless current_user&.imc_message.nil? %> Ideal weight: <%= current_user&.ideal_weight %>kg</h3>
             <!--<h3><%=  current_user&.progress_from_min %></h3>
           <h3><%=  current_user&.progress_from_begin %></h3>!-->
-=======
-        <div class="col-md-9 col-xs-12 text-center">
-        <h3>Ideal weight: <%= current_user&.ideal_weight.to_i %>kg</h3>
-        <h3 class="">BMI: <%= current_user&.imc_calc unless current_user&.imc_calc.nil? %> (<%=  current_user&.imc_message unless current_user&.imc_message.nil? %>)</h3>
->>>>>>> 7eccc4cb7186d41cfc4c972a6880ca227503749b
           <br>
           <%= render "profiles/BMI_bar"%>
         </div>
