@@ -9,3 +9,25 @@
 .text-white {
   color: $background-gray;
 }
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 50px;
+  width: 50px;
+  outline: black;
+  background-size: 100%, 100%;
+  background-color: rgba(128, 128, 128, 0.568);
+  border-radius: 4px;
+  margin: 10px;
+}
+
+.carousel-control-next-icon:after
+{
+  font-size: 55px;
+  color: red;
+}
+
+.carousel-control-prev-icon:after {
+  font-size: 55px;
+  color: red;
+}
