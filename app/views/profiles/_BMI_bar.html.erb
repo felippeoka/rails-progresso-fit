@@ -3,7 +3,7 @@
 
     <div class="col-xs-6 col">
     <% if current_user.imc_calc <= 16 %>
-    <%= image_tag "bmi_cropped2/under16.png", class: "img-bmi shadow" %>
+    <%= image_tag "bmi_cropped2/under16.png", class: "img-bmi shadow-lg" %>
     <% else %>
     <%= image_tag "bmi_cropped2/under16.png", class: "img-bmi-now opacity-25" %>
     <% end %>
@@ -11,7 +11,7 @@
 
     <div class="col-xs-6 col">
     <% if (current_user.imc_calc > 16) && (current_user.imc_calc <= 17) %>
-    <%= image_tag "bmi_cropped2/16 - 17.png", class: "img-bmi shadow" %>
+    <%= image_tag "bmi_cropped2/16 - 17.png", class: "img-bmi shadow-lg" %>
     <% else %>
     <%= image_tag "bmi_cropped2/16 - 17.png", class: "img-bmi-now opacity-25" %>
     <% end %>
@@ -19,7 +19,7 @@
 
     <div class="col-xs-6 col">
     <% if (current_user.imc_calc > 17) && (current_user.imc_calc <= 18.5) %>
-    <%= image_tag "bmi_cropped2/17 - 18.png", class: "img-bmi shadow" %>
+    <%= image_tag "bmi_cropped2/17 - 18.png", class: "img-bmi shadow-lg" %>
     <% else %>
     <%= image_tag "bmi_cropped2/17 - 18.png", class: "img-bmi-now opacity-25" %>
     <% end %>
@@ -43,7 +43,7 @@
 
     <div class="col-xs-6 col">
     <% if (current_user.imc_calc > 30) && (current_user.imc_calc <= 35) %>
-    <%= image_tag "bmi_cropped2/30 - 35.png", class: "img-bmi shadow" %>
+    <%= image_tag "bmi_cropped2/30 - 35.png", class: "img-bmi shadow-lg" %>
     <% else %>
     <%= image_tag "bmi_cropped2/30 - 35.png", class: "img-bmi-now opacity-25" %>
     <% end %>
@@ -51,7 +51,7 @@
 
     <div class="col-xs-6 col">
     <% if (current_user.imc_calc > 35) && (current_user.imc_calc <= 40) %>
-    <%= image_tag "bmi_cropped2/35 - 40.png", class: "img-bmi shadow" %>
+    <%= image_tag "bmi_cropped2/35 - 40.png", class: "img-bmi shadow-lg" %>
     <% else %>
     <%= image_tag "bmi_cropped2/35 - 40.png", class: "img-bmi-now opacity-25" %>
     <% end %>
@@ -59,7 +59,7 @@
 
     <div class="col-xs-6 col">
     <% if current_user.imc_calc > 40 %>
-    <%= image_tag "bmi_cropped2/Over40.png", class: "img-bmi shadow" %>
+    <%= image_tag "bmi_cropped2/Over40.png", class: "img-bmi shadow-lg" %>
     <% else %>
     <%= image_tag "bmi_cropped2/Over40.png", class: "img-bmi-now opacity-25" %>
     <% end %>
