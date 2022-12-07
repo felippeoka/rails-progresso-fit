@@ -2,10 +2,21 @@ class WeightsController < ApplicationController
   before_action :set_weight, only: %i[show edit update destroy]
 
   def index
-    if params[:query].present?
+    if params[:begin].present? && params[:end].present?
       # @weights = current_user.weights.search_by_value_and_created_at(params[:query])
-      date = Date.parse(params[:query])
-      @weights = current_user.weights.where(created_at: date.all_day)
+      date_begin = Date.parse(params[:begin])
+      date_end = Date.parse(params[:end])
+      if date_begin > date_end
+        flash[:alert] = "End date have to be greater than beginning date."
+        redirect_to weights_path
+      end
+      @weights = current_user.weights.where("created_at BETWEEN ? AND ?", date_begin.beginning_of_day, date_end.end_of_day)
+    elsif params[:begin].present?
+      date_begin = Date.parse(params[:begin])
+      @weights = current_user.weights.where("created_at >= ? ", date_begin.beginning_of_day)
+    elsif params[:end].present?
+      date_end = Date.parse(params[:end])
+      @weights = current_user.weights.where("created_at <= ? ", date_end.end_of_day)
     else
       @weights = current_user.weights
     end

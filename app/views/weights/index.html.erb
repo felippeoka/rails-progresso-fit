@@ -1,15 +1,29 @@
 <div class="container">
+
   <%= form_tag weights_path, method: :get do %>
     <div class="search-form-control form-group row">
-      <%= date_field_tag :query,
-                  params[:query],
-                  class: "form-control",
-                  placeholder: "Find your previous weight",
-                  as: :date %>
+    <div class="col-1 text-white">Start Date</div>
+      <div class="col-4">
+        <%= date_field_tag :begin,
+                    params[:begin],
+                    placeholder: "Start",
+                    class: "form-control",
+                    as: :date %>
+      </div>
+      <div class="col-1 text-white">End Date</div>
+      <div class="col-4">
+        <%= date_field_tag :end,
+                    params[:end],
+                    class: "form-control",
+                    placeholder: "Find your previous weight",
+                    as: :date %>
+      </div>
       <%# <%= f.input :created_at, as: :date, html5: true %>
-      <button name="button" type="submit" class="btn btn-flat">
-        <i class="fas fa-search"></i> Search
-      </button>
+      <div class="col-2">
+        <button name="button" type="submit" class="btn btn-search">
+          <i class="fas fa-search"></i> Search
+        </button>
+      </div>
     </div>
   <% end %>
   <div class="row d-flex justify-content-center">

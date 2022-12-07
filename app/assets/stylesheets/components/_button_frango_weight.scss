@@ -11,3 +11,18 @@
   background: #ab2415db;
   color: white;
 }
+
+.btn-search {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  background: #f23a26db;
+  transition: background 0.3s ease;
+  width: -webkit-fill-available;
+  height: 3.5rem;
+}
+
+.btn-search:hover {
+  background: #ab2415db;
+  color: white;
+}
