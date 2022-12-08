@@ -10,13 +10,13 @@
             <% end %>
           </div>
           <div class="info-color d-flex justify-content-center">
-            <ul class="list-group list-group-horizontal">
+            <ul class="list-group list-group-horizontal mb-3 mt-3">
               <div class="stat-subtext">Age
                 <li class="list-group"><%= current_user.birthday.nil? ? 0 : ((Time.zone.now - current_user.birthday&.to_time) / 1.year.seconds).floor %>y/o</li>
                 </div>
                 <div class="linha-vertical"></div>
                 <div class="stat-subtext">Weight
-                  <li class="list-group"><%= current_user.weights.last&.value.to_i %> kg</li>
+                  <li class="list-group"><%= current_user.weights.last&.value.to_i %>kg</li>
                 </div>
                 <div class="linha-vertical"></div>
                 <div class="stat-subtext">Height
