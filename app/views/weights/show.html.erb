@@ -28,7 +28,7 @@
     <div class="card-trip-infos">
       <div class="mx-3"></div>
       <div class="d-flex flex-column align-items-center">
-        <h2><i class="weight-icon fa-solid fa-dumbbell"></i>  <strong><%= @weight.value %>kg</strong></h2>
+        <h2><i class="weight-icon fa-solid fa-dumbbell"></i>  <strong><%= @weight.value.to_i %>kg</strong></h2>
         <p><i class="date-icon fa-solid fa-calendar-days"></i>  <strong><%= @weight.created_at.strftime("%d/%b/%Y") %></strong></p>
       </div>
       <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>

@@ -38,7 +38,7 @@ legend ~ div.form-check:first-of-type {
 // }
 
 .search-form-control .form-control {
-  height: 3.5rem;
+  height: 2.5rem;
   // box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   // border: 1px solid #E7E7E7;
   color: black;
@@ -55,4 +55,28 @@ legend ~ div.form-check:first-of-type {
   // box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   box-shadow: 0 2px 6px rgba(0,255,255,0.08);
   border-radius: 50px;
+}
+
+.start-label {
+  margin-block: auto;
+  padding-right: 1%;
+}
+
+.start-date-input {
+
+}
+
+.end-label {
+  margin-block: auto;
+  padding-right: 1%;
+  padding-left: 1%;
+}
+
+.end-date-input {
+
+}
+
+.button-search-date {
+  // margin-block: auto;
+  padding-left: 1%;
 }

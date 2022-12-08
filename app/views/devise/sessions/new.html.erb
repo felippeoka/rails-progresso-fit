@@ -1,42 +1,73 @@
-<div class="container">
-  <div class="col-sm-12 col-md-4">
-    <div class="split left">
-      <%= image_tag "login-photo.jpg", class:"img-fluid image-test" %>
-    </div>
-  </div>
-  <div class="split right">
-    <div class="centered">
-      <div class="d-flex justify-content-center">
+<div class="split left d-none d-md-block">
+  <%= image_tag "login-photo.jpg", class:"img-fluid image-test" %>
+</div>
+<div class="split right d-none d-md-block">
+  <div class="centered">
+    <div class="d-flex justify-content-center">
       <h2 class="h1-log mt-1 mb-4"><span style="color:white">LOG </span><span style="color:red">IN</span></h2>
     </div>
     <div class="d-flex justify-content-center">
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name),
       data: {turbo: false}) do |f| %>
         <div class="form-inputs text-white">
-        <%= f.input :email,
+          <%= f.input :email,
                     required: false,
                     autofocus: true,
                     placeholder: 'user@domain.com',
                     input_html: { autocomplete: "email", class:"text-dark text-center rounded-pill" } %>
-        <%= f.input :password,
+          <%= f.input :password,
                     required: false,
                     placeholder: '••••••',
                     input_html: { autocomplete: "current-password", class:"text-dark text-center rounded-pill" } %>
-        <div class="d-flex justify-content-center">
-        <%= f.input :remember_me, as: :boolean, class:"centered" if devise_mapping.rememberable? %>
+          <div class="d-flex justify-content-center">
+            <%= f.input :remember_me, as: :boolean, class:"centered" if devise_mapping.rememberable? %>
+          </div>
         </div>
+        <div class="form-actions d-grid gap-2">
+          <%= f.button :submit, "Log in", class: "btn btn-outline-secondary text-white rounded-pill" %>
+        </div>
+        <% end %>
       </div>
-      <div class="form-actions d-grid gap-2">
-        <%= f.button :submit, "Log in", class: "btn btn-outline-secondary text-white rounded-pill" %>
-      </div>
-      <% end %>
-    </div>
     <div class="d-flex justify-content-center">
-    <%= link_to "Forgot your password?", new_password_path(resource_name), class:"link-secondary mt-3 text-white rounded-pill" %>
+      <%= link_to "Forgot your password?", new_password_path(resource_name), class:"link-secondary mt-3 text-white rounded-pill" %>
     </div>
     <div class="d-flex justify-content-center mt-3 text-white">
-    <span>Don't have an account?</span>
-    <%= link_to "Sign up", new_registration_path(resource_name), class: "link-secondary ms-1 text-white rounded-pill" %>
+      <span>Don't have an account?</span>
+      <%= link_to "Sign up", new_registration_path(resource_name), class: "link-secondary ms-1 text-white rounded-pill" %>
     </div>
   </div>
+</div>
+<div class="d-block d-md-none">
+  <div class="centered">
+  <div class="d-flex justify-content-center">
+  <h2 class="h1-log mt-1 mb-4"><span style="color:white">LOG </span><span style="color:red">IN</span></h2>
+</div>
+<div class="d-flex justify-content-center">
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name),
+  data: {turbo: false}) do |f| %>
+  <div class="form-inputs text-white">
+    <%= f.input :email,
+                required: false,
+                autofocus: true,
+                placeholder: 'user@domain.com',
+                input_html: { autocomplete: "email", class:"text-dark text-center rounded-pill" } %>
+    <%= f.input :password,
+                required: false,
+                placeholder: '••••••',
+                input_html: { autocomplete: "current-password", class:"text-dark text-center rounded-pill" } %>
+    <div class="d-flex justify-content-center">
+      <%= f.input :remember_me, as: :boolean, class:"centered" if devise_mapping.rememberable? %>
+    </div>
+  </div>
+  <div class="form-actions d-grid gap-2">
+    <%= f.button :submit, "Log in", class: "btn btn-outline-secondary text-white rounded-pill" %>
+  </div>
+  <% end %>
+</div>
+<div class="d-flex justify-content-center">
+  <%= link_to "Forgot your password?", new_password_path(resource_name), class:"link-secondary mt-3 text-white rounded-pill" %>
+</div>
+  <div class="d-flex justify-content-center mt-3 text-white">
+  <span>Don't have an account?</span>
+  <%= link_to "Sign up", new_registration_path(resource_name), class: "link-secondary ms-1 text-white rounded-pill" %>
 </div>
