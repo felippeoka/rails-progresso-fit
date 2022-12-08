@@ -62,23 +62,17 @@
 .card-trip {
   overflow: hidden;
   background: black;
-  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  width: 500px;
+  width: 60vh;
+  height: 75vh;
   color: white;
   border-radius: 5px;
-  // box-shadow: -2px 1px 7px 0px $background-gray,
-  //           1px 2px 2px 0px $background-gray,
-  //           2px 4px 4px 0px $background-gray,
-  //           2px 4px 8px 0px $background-gray;
-  // border-width: 5px;
-  // border-color: #bbbbbb;
 }
 
-.card-trip > img {
-  height: 400px;
-  width: 500px;
-  object-fit: cover;
-}
+// .card-trip > img {
+//   height: 400px;
+//   width: 500px;
+//   object-fit: cover;
+// }
 
 .card-trip h2 {
   font-size: 20px;
@@ -114,6 +108,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   // border-radius: 10px;
   width: 100%;
+  background-color: rgba(128, 128, 128, 0.3);
 }
 
 .icon-edit {
@@ -174,6 +169,7 @@
 // }
 .card-full-posted-left {
   border-radius: 10px 10px 0 0;
+  background-color: #f5f8fa00;
 }
 
 //show de profiles(timeline)

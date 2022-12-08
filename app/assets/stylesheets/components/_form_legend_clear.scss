@@ -27,6 +27,9 @@ legend ~ div.form-check:first-of-type {
 }
 
 .search-form-control {
+  place-items: center;
+  text-align: -webkit-center;
+  align-items: center;
   // position: relative;
 }
 
@@ -38,15 +41,17 @@ legend ~ div.form-check:first-of-type {
 // }
 
 .search-form-control .form-control {
-  height: 3.5rem;
+  // height: 2.5rem;
   // box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   // border: 1px solid #E7E7E7;
   color: black;
+  place-items: center;
+  text-align: -webkit-center;
+  align-items: center;
   background-color: white;
   border-radius: 50px;
   border-color: transparent;
   box-shadow: 0 0 0 1px #000;
-  padding: 25px;
 }
 
 .search-form-control .form-control:focus {
@@ -55,4 +60,34 @@ legend ~ div.form-check:first-of-type {
   // box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   box-shadow: 0 2px 6px rgba(0,255,255,0.08);
   border-radius: 50px;
+}
+
+.start-label {
+  margin-block: auto;
+  padding-right: 1%;
+}
+
+.start-date-input {
+  max-height: 50px;
+  max-width: 160px;
+  text-align-last: center;
+}
+
+.end-label {
+  margin-block: auto;
+  padding-right: 1%;
+  padding-left: 1%;
+}
+
+.end-date-input {
+  max-height: 50px;
+  max-width: 160px;
+  text-align-last: center;
+}
+
+.button-search-date {
+  // margin-block: auto;
+  padding-left: 1%;
+  width: 160px;
+  height: 40px;
 }

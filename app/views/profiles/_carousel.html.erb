@@ -6,8 +6,8 @@
       </div>
     <% else %>
         <% weight.photos.each_with_index do |photo, index| %>
-          <div class="carousel-item <%= 'active' if index.zero? %> img-index-carousel">
-            <%= cl_image_tag photo.key, class: "img-index-carousel"  %>
+          <div class="carousel-item resize-center <%= 'active' if index.zero? %> img-index-carousel">
+            <%= cl_image_tag photo.key, class: "img-index-carousel resize-index", crop: :pad  %>
           </div>
         <% end %>
     <% end %>
