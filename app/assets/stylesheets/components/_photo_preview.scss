@@ -27,11 +27,12 @@
 }
 
 .resize {
-  width: 80%;
-  margin-top: 35px;
+  height: 57vh;
+  margin: 4vh;
 }
 .resize-index {
-  width: 80%;
+  height: 100%;
+  width: auto;
   // height: 80%;
 }
 // .resize {
@@ -41,4 +42,8 @@
 
 .resize-center {
   text-align: center;
+}
+
+.resize-photo-profile {
+  height: auto;
 }
