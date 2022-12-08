@@ -6,29 +6,23 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-# User.destroy_all
-# Weight.destroy_all
+Weight.destroy_all
+User.destroy_all
 
-# user = User.create!(
-#   birthday: "14/09/1990",
-#   age: 32,
-#   gender: "male",
-#   height: rand(170..190),
-#   email: "a@a.com",
-#   password: "123456",
-#   password_confirmation: "123456",
-#   phone: "1234567",
-#   first_name: "Bruno",
-#   last_name: "Allevato"
-# )
+user = User.create!(
+  email: "andre@gmail.com",
+  password: "123123",
+  password_confirmation: "123123",
+  phone: "111234567",
+  first_name: "André",
+  last_name: "Gorgen"
+)
 
 (1..18).each do |i|
   Weight.create!(
-    user_id: 7,
+    user: user,
     value: rand(80..95),
-    # created_at: DateTime.now - i.week
     created_at: 18.week.ago + i.week
-    # updated_at: DateTime.now + i
   )
 end
 
