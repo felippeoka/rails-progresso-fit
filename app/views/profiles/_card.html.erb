@@ -9,17 +9,17 @@
 
       <div class="w-100 card-full-posted-right">
         <div class="card-text-posted d-flex card-full-posted-right">
-        
-          <h3 class="text-decoration-none"><i class="fa-solid fa-dumbbell"></i>  <%= weight.value %> kg</h3>
-          
+
+          <h3 class="text-decoration-none"><i class="fa-solid fa-dumbbell"></i>  <%= weight.value.to_i %>kg</h3>
+
             <p><strong><i class="fa-solid fa-calendar-days"></i>  <%= weight.created_at.strftime("%d/%b/%Y") %></strong></p>
 
             <% unless current_user.weights.size <= index +1 %>
             <% diff = current_user.weights.order(created_at: :desc)[index + 1].value - weight.value %>
               <% if diff > 0 %>
-                <p><i class="fa-solid fa-arrow-down text-success"></i>   <%= (diff * (-1))  %> kg</p>
+                <p><i class="fa-solid fa-arrow-down text-success"></i>   <%= (diff * (-1))  %>kg</p>
               <% else %>
-                <p><i class="fa-solid fa-arrow-up text-danger"></i>   <%= (diff * (-1))  %> kg</p>
+                <p><i class="fa-solid fa-arrow-up text-danger"></i>   <%= (diff * (-1))  %>kg</p>
                 <% end %>
             <% else %>
               <p>💪 beginning</p>
@@ -29,7 +29,7 @@
     <% end %>
 
     </div>
-    
+
   </div>
 </div>
 <!--
