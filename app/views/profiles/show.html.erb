@@ -71,8 +71,8 @@
                   <div class="carousel-inner rounded">
                     <% if current_user.weights.first.photos.attached? %>
                       <% current_user.weights.first.photos.each_with_index do |photo, index| %>
-                        <div class="carousel-item <%= 'active' if index.zero? %>">
-                          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :pad, style:"border-radius:5px; resize-photo-profile", class:"d-block w-100" %>
+                        <div class="carousel-item resize-center <%= 'active' if index.zero? %>">
+                          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :pad, style:"border-radius:5px;", class:"d-block w-100 resize-photo-profile" %>
                         </div>
                       <% end %>
                     <% else %>
