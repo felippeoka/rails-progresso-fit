@@ -108,6 +108,6 @@ class User < ApplicationRecord
   end
 
   def weights_all
-    weights.pluck(:value)
+    weights.order(created_at: :asc).pluck(:value)
   end
 end
